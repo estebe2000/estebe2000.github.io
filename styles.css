@@ -27,3 +27,8 @@ body {
 h1, h2 {
   color: #333;
 }
+iframe {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc; /* Ajoutez un bord si nécessaire */
+}
