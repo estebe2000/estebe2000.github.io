@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.menu {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  padding: 10px;
+}
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.menu a:hover {
+  background-color: #555;
+}
+.content {
+  padding: 15px;
+}
+.section {
+  margin-bottom: 20px;
+}
+h1, h2 {
+  color: #333;
+}
