@@ -1,0 +1,26 @@
+ Le volume dans le lecteur C n'a pas de nom.
+ Le num‚ro de s‚rie du volume est 9E79-9BEC
+
+ R‚pertoire de C:\travail
+
+21/01/2025  15:05    <DIR>          .
+21/01/2025  15:04    <DIR>          a
+21/01/2025  15:05                 0 a.txt
+21/01/2025  15:04             2ÿ045 app.py
+21/01/2025  15:04    <DIR>          b
+21/01/2025  15:04    <DIR>          but
+21/01/2025  15:04    <DIR>          c
+21/01/2025  15:04    <DIR>          d
+21/01/2025  15:04    <DIR>          e
+21/01/2025  15:04    <DIR>          f
+21/01/2025  15:04    <DIR>          g
+21/01/2025  15:04               986 index.html
+21/01/2025  15:04               660 monstyle.css
+21/01/2025  15:04             1ÿ633 nsi.html
+21/01/2025  15:04                24 README.md
+21/01/2025  15:04               584 styles.css
+21/01/2025  15:04                12 testing.txt
+21/01/2025  15:04    <DIR>          titi
+21/01/2025  15:04    <DIR>          toto
+               8 fichier(s)            5ÿ944 octets
+              11 R‚p(s)  364ÿ305ÿ887ÿ232 octets libres
