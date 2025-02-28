@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution - Chasse au Trésor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hacker-theme.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo Lycée Jean Prévost" id="logo-img">
+            <h1>Chasse au Trésor</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="visite.html">Visites Virtuelles</a></li>
+                <li><a href="mini-jeux.html">Mini-Jeux</a></li>
+                <li><a href="solution.html" class="active">Solution</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Ressources+</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ressources.html">Ressources</a></li>
+                        <li><a href="archives.html">Archives</a></li>
+                        <li><a href="crypto.html">Cryptographie</a></li>
+                    </ul>
+                </li>
+                <li><a href="credits.html">Crédits</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Soumission de la Citation</h2>
+                <p>Vous avez collecté tous les fragments de la citation ? Assemblez-les et soumettez la citation complète pour accéder à l'épreuve finale !</p>
+            </div>
+        </section>
+
+        <section class="solution">
+            <h2>Entrez la Citation Complète</h2>
+            
+            <div class="quote-submission" id="quote-submission">
+                <div class="form-group">
+                    <label for="quote-input">Citation complète :</label>
+                    <textarea id="quote-input" rows="4" placeholder="Entrez ici la citation complète que vous avez reconstituée..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button id="submit-quote" class="btn-primary">Vérifier la citation</button>
+                    <button id="show-fragments" class="btn-secondary">Voir mes fragments collectés</button>
+                </div>
+                
+                <div id="quote-result" class="quote-result hidden"></div>
+            </div>
+            
+            <div class="collected-fragments hidden" id="collected-fragments">
+                <h3>Fragments collectés</h3>
+                <div id="fragments-list" class="fragments-list">
+                    <!-- Fragments will be populated by JavaScript -->
+                </div>
+                <button id="hide-fragments" class="btn-secondary">Masquer les fragments</button>
+            </div>
+        </section>
+
+        <section class="final-challenge hidden" id="final-challenge">
+            <h2>Félicitations ! Accès à l'Épreuve Finale</h2>
+            
+            <div class="challenge-intro">
+                <p>Bravo ! Vous avez correctement reconstitué la citation. Vous pouvez maintenant accéder à l'épreuve finale.</p>
+                <p>Dans cette dernière étape, vous devrez écouter un extrait musical, identifier certains éléments clés, puis rédiger une courte nouvelle inspirée par ces indices.</p>
+                <a href="final.html" class="btn-primary">Accéder à l'épreuve finale</a>
+            </div>
+        </section>
+
+        <section class="progress">
+            <h2>Votre progression</h2>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-stats">
+                    <p>Mini-jeux complétés: <span id="completed-games">0</span>/6</p>
+                    <p>Citation: <span id="quote-progress">0</span>%</p>
+                </div>
+                <button id="reset-progress" class="btn-secondary">Réinitialiser la progression</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Lycée Jean Prévost - Montivilliers, France</p>
+        <p>Projet éducatif de chasse au trésor</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/logo-placeholder.js"></script>
+    <script src="js/hero-placeholder.js"></script>
+    <script src="js/solution-pattern.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/visual-feedback.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/solution.js"></script>
+    <script src="js/hacker-theme.js"></script>
+    <script src="js/secret-phrases.js"></script>
+    <script src="js/hacker-effects.js"></script>
+    <script src="js/binary-game.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/user-profile.js"></script>
+</body>
+</html>

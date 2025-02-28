@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Jeux - Chasse au Trésor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hacker-theme.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo Lycée Jean Prévost" id="logo-img">
+            <h1>Chasse au Trésor</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="visite.html">Visites Virtuelles</a></li>
+                <li><a href="mini-jeux.html" class="active">Mini-Jeux</a></li>
+                <li><a href="solution.html">Solution</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Ressources+</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ressources.html">Ressources</a></li>
+                        <li><a href="archives.html">Archives</a></li>
+                        <li><a href="crypto.html">Cryptographie</a></li>
+                    </ul>
+                </li>
+                <li><a href="credits.html">Crédits</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Mini-Jeux</h2>
+                <p>Complétez les 6 mini-jeux pour collecter tous les fragments de la citation mystère. Chaque jeu réussi vous rapproche de la solution finale !</p>
+            </div>
+        </section>
+
+        <section class="games">
+            <h2>Liste des Mini-Jeux</h2>
+            
+            <div class="games-grid" id="games-grid">
+                <!-- Games will be populated by JavaScript -->
+            </div>
+            
+            <div class="games-instructions">
+                <h3><i class="fas fa-info-circle"></i> Comment jouer</h3>
+                <p>Chaque mini-jeu est accessible de deux façons :</p>
+                <ul>
+                    <li><i class="fas fa-qrcode"></i> <strong>Via les QR codes</strong> cachés dans les visites virtuelles</li>
+                    <li><i class="fas fa-gamepad"></i> <strong>Directement depuis cette page</strong> en cliquant sur les cartes de jeu</li>
+                </ul>
+                <p>Après avoir complété un mini-jeu, vous recevrez un fragment de la citation mystère. Collectez les 6 fragments pour reconstituer la citation complète !</p>
+            </div>
+        </section>
+
+        <section class="quote-collection">
+            <h2>Fragments de Citation Collectés</h2>
+            <div class="quote-container" id="quote-container">
+                <p class="empty-quote">Vous n'avez pas encore collecté de fragments de citation. Complétez les mini-jeux pour les obtenir !</p>
+                <!-- Quote fragments will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="progress">
+            <h2>Votre progression</h2>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-stats">
+                    <p>Mini-jeux complétés: <span id="completed-games">0</span>/6</p>
+                    <p>Citation: <span id="quote-progress">0</span>%</p>
+                </div>
+                <button id="reset-progress" class="btn-secondary">Réinitialiser la progression</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Lycée Jean Prévost - Montivilliers, France</p>
+        <p>Projet éducatif de chasse au trésor</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/logo-placeholder.js"></script>
+    <script src="js/hero-placeholder.js"></script>
+    <script src="js/game-illustrations.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/visual-feedback.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/mini-jeux.js"></script>
+    <script src="js/hacker-theme.js"></script>
+    <script src="js/secret-phrases.js"></script>
+    <script src="js/hacker-effects.js"></script>
+    <script src="js/binary-game.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/user-profile.js"></script>
+</body>
+</html>
