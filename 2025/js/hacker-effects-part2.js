@@ -1,330 +1,4 @@
 /**
- * Hacker Effects JavaScript
- * Ce fichier contient des effets visuels et sonores avancés pour le mode hackeur
- */
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialiser les effets si le mode hackeur est activé
-    if (localStorage.getItem('hackerTheme') === 'enabled') {
-        initHackerEffects();
-    }
-});
-
-/**
- * Initialise tous les effets du mode hackeur
- */
-function initHackerEffects() {
-    // Initialiser les effets visuels
-    initMatrixDecodeEffect();
-    initScreenDistortionEffect();
-    initCustomCursor();
-    
-    // Initialiser les effets sonores
-    initSoundEffects();
-    
-    // Initialiser le terminal caché
-    initHiddenTerminal();
-    
-    // Initialiser les indices cachés
-    initHiddenClues();
-    
-    // Ajouter un écouteur d'événements pour la touche Échap
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const terminal = document.querySelector('.hacker-terminal');
-            if (terminal && terminal.classList.contains('active')) {
-                terminal.classList.remove('active');
-                if (typeof playSound === 'function') {
-                    playSound('terminal');
-                }
-            }
-        }
-    });
-}
-
-/**
- * Effet de décodage Matrix pour le texte
- */
-function initMatrixDecodeEffect() {
-    // Sélectionner des éléments de texte aléatoires pour l'effet de décodage
-    const textElements = document.querySelectorAll('h1, h2, h3, p');
-    const randomElements = Array.from(textElements)
-        .sort(() => 0.5 - Math.random())
-        .slice(0, Math.min(10, textElements.length));
-    
-    randomElements.forEach(element => {
-        element.setAttribute('data-original-text', element.textContent);
-        element.classList.add('matrix-decode');
-        
-        // Ajouter un événement pour déclencher l'effet au survol
-        element.addEventListener('mouseover', () => {
-            if (!element.classList.contains('decoding')) {
-                decodeMatrixText(element);
-            }
-        });
-    });
-    
-    // Ajouter les styles CSS pour l'effet
-    const style = document.createElement('style');
-    style.textContent = `
-        .matrix-decode {
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .matrix-decode:hover {
-            color: #00ff00 !important;
-            text-shadow: 0 0 5px #00ff00;
-        }
-        
-        .decoding {
-            color: #00ff00 !important;
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Déclencher l'effet sur quelques éléments au chargement
-    setTimeout(() => {
-        const initialElements = randomElements.slice(0, 3);
-        initialElements.forEach(element => {
-            decodeMatrixText(element);
-        });
-    }, 2000);
-}
-
-/**
- * Décode le texte avec un effet Matrix
- * @param {HTMLElement} element - L'élément à décoder
- */
-function decodeMatrixText(element) {
-    const originalText = element.getAttribute('data-original-text');
-    const textLength = originalText.length;
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,./<>?';
-    
-    element.classList.add('decoding');
-    
-    let iterations = 0;
-    const maxIterations = 10;
-    const interval = 30;
-    
-    const decode = () => {
-        let decodedText = '';
-        
-        for (let i = 0; i < textLength; i++) {
-            // Si l'itération est suffisamment avancée, montrer le caractère original
-            if (i < iterations * (textLength / maxIterations)) {
-                decodedText += originalText[i];
-            } 
-            // Sinon, montrer un caractère aléatoire
-            else {
-                decodedText += characters.charAt(Math.floor(Math.random() * characters.length));
-            }
-        }
-        
-        element.textContent = decodedText;
-        
-        if (iterations < maxIterations) {
-            iterations++;
-            setTimeout(decode, interval);
-        } else {
-            element.textContent = originalText;
-            element.classList.remove('decoding');
-            playSound('decode');
-        }
-    };
-    
-    decode();
-}
-
-/**
- * Effet de distorsion d'écran
- */
-function initScreenDistortionEffect() {
-    // Créer l'élément de distorsion
-    const distortion = document.createElement('div');
-    distortion.className = 'screen-distortion';
-    document.body.appendChild(distortion);
-    
-    // Ajouter les styles CSS pour l'effet
-    const style = document.createElement('style');
-    style.textContent = `
-        .screen-distortion {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0;
-            background: linear-gradient(transparent, rgba(0, 255, 0, 0.2), transparent);
-            background-size: 100% 3px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5) inset;
-        }
-        
-        .screen-distortion.active {
-            animation: distort 0.5s ease-out forwards;
-        }
-        
-        @keyframes distort {
-            0% {
-                opacity: 0;
-                transform: translateY(0) scaleY(1);
-            }
-            10% {
-                opacity: 1;
-                transform: translateY(-20px) scaleY(1.2);
-            }
-            20% {
-                transform: translateY(20px) scaleY(0.8);
-            }
-            30% {
-                transform: translateY(-10px) scaleY(1.1);
-            }
-            40% {
-                transform: translateY(10px) scaleY(0.9);
-            }
-            50% {
-                transform: translateY(-5px) scaleY(1.05);
-            }
-            60% {
-                transform: translateY(5px) scaleY(0.95);
-            }
-            70% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(0) scaleY(1);
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Fonction pour déclencher l'effet de distorsion
-    window.triggerDistortion = () => {
-        distortion.classList.remove('active');
-        void distortion.offsetWidth; // Force reflow
-        distortion.classList.add('active');
-        playSound('glitch');
-        
-        // Supprimer la classe après l'animation
-        setTimeout(() => {
-            distortion.classList.remove('active');
-        }, 500);
-    };
-    
-    // Déclencher l'effet périodiquement
-    setInterval(() => {
-        // 5% de chance de déclencher l'effet toutes les 30 secondes
-        if (Math.random() < 0.05) {
-            triggerDistortion();
-        }
-    }, 30000);
-    
-    // Déclencher l'effet au chargement
-    setTimeout(() => {
-        triggerDistortion();
-    }, 3000);
-}
-
-/**
- * Curseur personnalisé pour le mode hackeur
- */
-function initCustomCursor() {
-    // Créer le curseur personnalisé
-    const cursor = document.createElement('div');
-    cursor.className = 'hacker-cursor';
-    document.body.appendChild(cursor);
-    
-    // Ajouter les styles CSS pour le curseur
-    const style = document.createElement('style');
-    style.textContent = `
-        body {
-            cursor: none !important;
-        }
-        
-        a, button, input, select, textarea, [role="button"], [onclick] {
-            cursor: none !important;
-        }
-        
-        .hacker-cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #00ff00;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9999;
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-            mix-blend-mode: difference;
-        }
-        
-        .hacker-cursor::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 4px;
-            height: 4px;
-            background-color: #00ff00;
-            border-radius: 50%;
-        }
-        
-        .hacker-cursor.active {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0, 255, 0, 0.2);
-            mix-blend-mode: screen;
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Suivre le mouvement de la souris
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-    
-    // Changer l'apparence du curseur sur les éléments cliquables
-    document.addEventListener('mouseover', (e) => {
-        if (e.target.tagName === 'A' || 
-            e.target.tagName === 'BUTTON' || 
-            e.target.tagName === 'INPUT' || 
-            e.target.tagName === 'SELECT' || 
-            e.target.tagName === 'TEXTAREA' ||
-            e.target.hasAttribute('onclick') ||
-            e.target.getAttribute('role') === 'button') {
-            cursor.classList.add('active');
-        }
-    });
-    
-    document.addEventListener('mouseout', (e) => {
-        if (e.target.tagName === 'A' || 
-            e.target.tagName === 'BUTTON' || 
-            e.target.tagName === 'INPUT' || 
-            e.target.tagName === 'SELECT' || 
-            e.target.tagName === 'TEXTAREA' ||
-            e.target.hasAttribute('onclick') ||
-            e.target.getAttribute('role') === 'button') {
-            cursor.classList.remove('active');
-        }
-    });
-    
-    // Effet de clic
-    document.addEventListener('mousedown', () => {
-        cursor.classList.add('active');
-        playSound('click');
-    });
-    
-    document.addEventListener('mouseup', () => {
-        cursor.classList.remove('active');
-    });
-}
-
-/**
  * Initialise les effets sonores
  */
 function initSoundEffects() {
@@ -854,4 +528,86 @@ function initHiddenClues() {
                 padding-left: 20px;
             }
             
-            .hidden-clues
+            .hidden-clues li {
+                margin-bottom: 5px;
+                font-size: 14px;
+            }
+            
+            .hidden-clues .close-clues {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                color: #00ff00;
+            }
+            
+            .hidden-clues .close-clues:hover {
+                color: #ff0000;
+            }
+            
+            .hidden-clues-toggle {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: rgba(0, 0, 0, 0.8);
+                border: 1px solid #00ff00;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 9997;
+                font-family: 'Courier New', monospace;
+                color: #00ff00;
+                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+                font-size: 20px;
+            }
+            
+            .hidden-clues-toggle:hover {
+                background-color: rgba(0, 255, 0, 0.2);
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Créer le contenu des indices
+        cluesContainer.innerHTML = `
+            <span class="close-clues">×</span>
+            <h3>Indices Découverts</h3>
+            <ul>
+                ${revealedClues.map(clue => `<li>${clue}</li>`).join('')}
+            </ul>
+        `;
+        
+        // Créer le bouton pour afficher/masquer les indices
+        const cluesToggle = document.createElement('div');
+        cluesToggle.className = 'hidden-clues-toggle';
+        cluesToggle.innerHTML = '?';
+        cluesToggle.title = 'Afficher les indices découverts';
+        
+        // Ajouter les éléments au document
+        document.body.appendChild(cluesContainer);
+        document.body.appendChild(cluesToggle);
+        
+        // Masquer les indices par défaut
+        cluesContainer.style.display = 'none';
+        
+        // Gérer l'affichage/masquage des indices
+        cluesToggle.addEventListener('click', () => {
+            if (cluesContainer.style.display === 'none') {
+                cluesContainer.style.display = 'block';
+                playSound('success');
+            } else {
+                cluesContainer.style.display = 'none';
+            }
+        });
+        
+        // Gérer la fermeture des indices
+        const closeButton = cluesContainer.querySelector('.close-clues');
+        closeButton.addEventListener('click', () => {
+            cluesContainer.style.display = 'none';
+        });
+    }
+}

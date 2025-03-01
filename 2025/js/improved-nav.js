@@ -44,18 +44,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add active class to current page link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('nav a');
+    
+    // First pass: mark the exact matching link as active
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
         if (linkPage === currentPage) {
             link.classList.add('active');
-            
-            // If it's in a dropdown, add active to parent
-            const parentDropdown = link.closest('.dropdown');
-            if (parentDropdown) {
-                const dropdownToggle = parentDropdown.querySelector('.dropdown-toggle');
-                if (dropdownToggle) {
-                    dropdownToggle.classList.add('active');
-                }
+        }
+    });
+    
+    // Second pass: if a dropdown menu item is active, also mark its parent toggle as active
+    const activeDropdownItems = document.querySelectorAll('.dropdown-menu a.active');
+    activeDropdownItems.forEach(activeItem => {
+        const parentDropdown = activeItem.closest('.dropdown');
+        if (parentDropdown) {
+            const dropdownToggle = parentDropdown.querySelector('.dropdown-toggle');
+            if (dropdownToggle) {
+                dropdownToggle.classList.add('active');
             }
         }
     });

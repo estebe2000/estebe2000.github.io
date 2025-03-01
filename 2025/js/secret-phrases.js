@@ -337,20 +337,28 @@ function initSecretPhraseDetection() {
             openTerminalButton.addEventListener('click', () => {
                 message.remove();
                 
-                // Ouvrir le terminal principal
-                const terminal = document.querySelector('.hacker-terminal');
-                if (terminal) {
-                    terminal.classList.add('active');
-                    const input = terminal.querySelector('#terminal-input');
-                    if (input) {
-                        input.focus();
-                    }
-                    if (typeof playSound === 'function') {
-                        playSound('terminal');
-                    }
-                } else {
-                    console.error('Terminal not found. Make sure hacker-effects.js is loaded.');
+                // Ensure the terminal is initialized
+                if (typeof initHiddenTerminal === 'function') {
+                    initHiddenTerminal();
                 }
+                
+                // Open the terminal
+                setTimeout(() => {
+                    const terminal = document.querySelector('.hacker-terminal');
+                    if (terminal) {
+                        terminal.classList.add('active');
+                        const input = terminal.querySelector('#terminal-input');
+                        if (input) {
+                            input.focus();
+                        }
+                        if (typeof playSound === 'function') {
+                            playSound('terminal');
+                        }
+                    } else {
+                        console.error('Terminal not found. Creating a simple terminal instead.');
+                        createSimpleTerminal();
+                    }
+                }, 100);
             });
         }
     }
