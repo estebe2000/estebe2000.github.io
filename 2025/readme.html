@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Template de Chasse au Trésor</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --code-bg: #f1f1f1;
+            --border-color: #ddd;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-top: 30px;
+        }
+        
+        h4 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 25px;
+        }
+        
+        p, li {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--code-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        .note {
+            background-color: #e7f5fe;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning {
+            background-color: #fff5e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .important {
+            background-color: #fae5e5;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: var(--light-bg);
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        tr:hover {
+            background-color: var(--light-bg);
+        }
+        
+        .toc {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .toc ul ul {
+            padding-left: 20px;
+        }
+        
+        .toc li {
+            margin-bottom: 8px;
+        }
+        
+        .file-structure {
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+            line-height: 1.4;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: var(--code-bg);
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        
+        .json-example {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .back-to-top:hover {
+            opacity: 1;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Documentation du Template de Chasse au Trésor</h1>
+        <p>Guide complet pour personnaliser et déployer votre propre chasse au trésor interactive</p>
+    </header>
+    
+    <div class="toc">
+        <h3>Table des matières</h3>
+        <ul>
+            <li><a href="#introduction">1. Introduction</a></li>
+            <li><a href="#structure">2. Structure du projet</a></li>
+            <li><a href="#personnalisation">3. Personnalisation</a>
+                <ul>
+                    <li><a href="#personnalisation-generale">3.1 Personnalisation générale</a></li>
+                    <li><a href="#personnalisation-pages">3.2 Personnalisation des pages</a></li>
+                    <li><a href="#personnalisation-images">3.3 Personnalisation des images</a></li>
+                </ul>
+            </li>
+            <li><a href="#fichiers-json">4. Fichiers JSON</a>
+                <ul>
+                    <li><a href="#email-info">4.1 email-info.json</a></li>
+                    <li><a href="#final-instructions">4.2 final-instructions.json</a></li>
+                    <li><a href="#mini-games">4.3 mini-games.json</a></li>
+                    <li><a href="#music-clues">4.4 music-clues.json</a></li>
+                    <li><a href="#quote-fragments">4.5 quote-fragments.json</a></li>
+                    <li><a href="#virtual-visits">4.6 virtual-visits.json</a></li>
+                    <li><a href="#hacker-clues">4.7 hacker-clues.json</a></li>
+                    <li><a href="#hacker-phrases">4.8 hacker-phrases.json</a></li>
+                </ul>
+            </li>
+            <li><a href="#mode-hacker">5. Mode Hacker</a>
+                <ul>
+                    <li><a href="#activation-hacker">5.1 Activation du mode Hacker</a></li>
+                    <li><a href="#personnalisation-hacker">5.2 Personnalisation du mode Hacker</a></li>
+                    <li><a href="#effets-hacker">5.3 Effets visuels et sonores</a></li>
+                </ul>
+            </li>
+            <li><a href="#fonctionnalites">6. Fonctionnalités principales</a>
+                <ul>
+                    <li><a href="#visites-virtuelles">6.1 Visites virtuelles</a></li>
+                    <li><a href="#mini-jeux">6.2 Mini-jeux</a></li>
+                    <li><a href="#citation-mystere">6.3 Citation mystère</a></li>
+                    <li><a href="#epreuve-finale">6.4 Épreuve finale</a></li>
+                </ul>
+            </li>
+            <li><a href="#profil-utilisateur">7. Système de profil utilisateur</a></li>
+            <li><a href="#deploiement">8. Déploiement</a></li>
+            <li><a href="#conseils">9. Conseils et bonnes pratiques</a></li>
+        </ul>
+    </div>
+    
+    <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>Ce template de chasse au trésor est une application web interactive conçue pour créer des expériences éducatives et ludiques. Il combine des visites virtuelles, des mini-jeux, des énigmes et des éléments narratifs pour engager les utilisateurs dans une aventure immersive.</p>
+        
+        <p>Le template est hautement personnalisable et peut être adapté à différents contextes éducatifs, culturels ou promotionnels. Que vous soyez un établissement scolaire, un musée, une bibliothèque ou une entreprise, vous pouvez utiliser ce template pour créer votre propre chasse au trésor numérique.</p>
+        
+        <div class="note">
+            <strong>Note :</strong> Ce template est conçu pour fonctionner sans base de données ni serveur backend. Toutes les données sont stockées localement dans des fichiers JSON et dans le stockage local du navigateur de l'utilisateur.
+        </div>
+    </section>
+    
+    <section id="structure">
+        <h2>2. Structure du projet</h2>
+        <p>Le projet est organisé selon la structure suivante :</p>
+        
+        <div class="file-structure">
+├── index.html              # Page d'accueil
+├── visite.html             # Page des visites virtuelles
+├── mini-jeux.html          # Page des mini-jeux
+├── solution.html           # Page de solution
+├── ressources.html         # Page de ressources pédagogiques
+├── archives.html           # Page d'archives historiques
+├── histoire.html           # Page d'histoire
+├── crypto.html             # Page de cryptographie
+├── credits.html            # Page de crédits
+├── final.html              # Page de l'épreuve finale
+├── readme.html             # Cette documentation
+├── css/                    # Styles CSS
+│   ├── style.css           # Styles principaux
+│   ├── hacker-theme.css    # Styles du mode hacker
+│   ├── improved-nav.css    # Styles de navigation
+│   ├── mobile-menu.css     # Styles pour mobile
+│   └── ...
+├── js/                     # Scripts JavaScript
+│   ├── script.js           # Script principal
+│   ├── hacker-effects.js   # Effets du mode hacker
+│   ├── improved-nav.js     # Navigation améliorée
+│   ├── core/               # Scripts fondamentaux
+│   │   ├── app.js          # Application principale
+│   │   ├── data-loader.js  # Chargement des données
+│   │   ├── game-state.js   # État du jeu
+│   │   └── ...
+│   └── ...
+├── data/                   # Fichiers de données JSON
+│   ├── email-info.json     # Configuration des emails
+│   ├── final-instructions.json # Instructions finales
+│   ├── mini-games.json     # Configuration des mini-jeux
+│   ├── music-clues.json    # Indices musicaux
+│   ├── quote-fragments.json # Fragments de citation
+│   ├── virtual-visits.json # Configuration des visites virtuelles
+│   ├── hacker-clues.json   # Indices du mode hacker
+│   └── hacker-phrases.json # Phrases du mode hacker
+├── images/                 # Images et ressources visuelles
+│   ├── logo.png            # Logo du site
+│   ├── archives/           # Images d'archives
+│   ├── games/              # Images des mini-jeux
+│   ├── qr-codes/           # QR codes pour les mini-jeux
+│   └── ...
+└── sounds/                 # Fichiers audio
+    ├── ambient.mp3         # Son d'ambiance
+    ├── click.mp3           # Son de clic
+    ├── success.mp3         # Son de succès
+    └── ...
+</div>
+    </section>
+    
+    <section id="personnalisation">
+        <h2>3. Personnalisation</h2>
+        
+        <section id="personnalisation-generale">
+            <h3>3.1 Personnalisation générale</h3>
+            <p>Pour personnaliser le template selon vos besoins, commencez par ces éléments fondamentaux :</p>
+            
+            <h4>Titre et logo</h4>
+            <ul>
+                <li>Remplacez le logo dans <code>images/logo.png</code> par votre propre logo</li>
+                <li>Modifiez le titre du site dans toutes les pages HTML (balise <code>&lt;title&gt;</code> et <code>&lt;h1&gt;</code> dans le header)</li>
+            </ul>
+            
+            <h4>Couleurs et thème</h4>
+            <p>Les couleurs principales sont définies dans <code>css/style.css</code> avec des variables CSS :</p>
+            <pre><code>:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    /* ... autres variables ... */
+}</code></pre>
+            <p>Modifiez ces valeurs pour adapter le thème à votre identité visuelle.</p>
+            
+            <h4>Pied de page</h4>
+            <p>Mettez à jour les informations de copyright et autres mentions dans le pied de page de chaque fichier HTML :</p>
+            <pre><code>&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 Votre Organisation - Votre Ville, Pays&lt;/p&gt;
+    &lt;p&gt;Description de votre projet&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+        </section>
+        
+        <section id="personnalisation-pages">
+            <h3>3.2 Personnalisation des pages</h3>
+            <p>Chaque page HTML peut être personnalisée pour correspondre à votre contexte :</p>
+            
+            <h4>Page d'accueil (index.html)</h4>
+            <ul>
+                <li>Modifiez le texte d'introduction et la description du projet</li>
+                <li>Personnalisez les sections de présentation</li>
+                <li>Adaptez les appels à l'action</li>
+            </ul>
+            
+            <h4>Page Histoire (histoire.html)</h4>
+            <ul>
+                <li>Remplacez le contenu par l'histoire de votre organisation ou lieu</li>
+                <li>Ajoutez des dates et événements importants</li>
+                <li>Incluez des photos historiques pertinentes</li>
+            </ul>
+            
+            <h4>Page Archives (archives.html)</h4>
+            <ul>
+                <li>Remplacez les images et descriptions par vos propres archives</li>
+                <li>Organisez les archives selon vos catégories (bâtiments, événements, etc.)</li>
+            </ul>
+            
+            <h4>Page Ressources (ressources.html)</h4>
+            <ul>
+                <li>Adaptez les liens et ressources à votre domaine</li>
+                <li>Ajoutez ou supprimez des catégories selon vos besoins</li>
+            </ul>
+            
+            <div class="important">
+                <strong>Important :</strong> Assurez-vous de maintenir la cohérence entre les pages en conservant la structure de navigation et les éléments communs.
+            </div>
+        </section>
+        
+        <section id="personnalisation-images">
+            <h3>3.3 Personnalisation des images</h3>
+            <p>Remplacez toutes les images par vos propres visuels :</p>
+            
+            <h4>Images principales</h4>
+            <ul>
+                <li><code>images/logo.png</code> : Logo de votre organisation</li>
+                <li>Images dans les dossiers thématiques (archives, games, etc.)</li>
+            </ul>
+            
+            <h4>QR Codes</h4>
+            <p>Les QR codes dans <code>images/qr-codes/</code> doivent être générés pour pointer vers vos mini-jeux. Vous pouvez utiliser un générateur de QR code en ligne pour créer des codes qui pointent vers les URLs de vos mini-jeux.</p>
+            
+            <div class="note">
+                <strong>Note :</strong> Assurez-vous que toutes les images sont optimisées pour le web (taille et poids raisonnables) pour garantir des temps de chargement rapides.
+            </div>
+        </section>
+    </section>
+    
+    <section id="fichiers-json">
+        <h2>4. Fichiers JSON</h2>
+        <p>Les fichiers JSON dans le dossier <code>data/</code> contiennent les configurations et données dynamiques du site. Voici comment les personnaliser :</p>
+        
+        <section id="email-info">
+            <h3>4.1 email-info.json</h3>
+            <p>Ce fichier contient les informations pour générer un email à la fin de l'aventure :</p>
+            <div class="json-example">
+<pre><code>{
+  "to": "enseignant@exemple.fr",
+  "subject": "Chasse au Trésor - Nouvelle soumise",
+  "body": "Bonjour,\n\nVeuillez trouver ci-joint ma nouvelle créée dans le cadre de la chasse au trésor.\n\nCordialement,\n[NOM_ELEVE]",
+  "signature": "Envoyé depuis la Chasse au Trésor"
+}</code></pre>
+            </div>
+            <p>Personnalisez l'adresse email de destination, l'objet et le corps du message selon vos besoins.</p>
+        </section>
+        
+        <section id="final-instructions">
+            <h3>4.2 final-instructions.json</h3>
+            <p>Ce fichier contient les instructions pour l'épreuve finale :</p>
+            <div class="json-example">
+<pre><code>{
+  "title": "Instructions pour l'épreuve finale",
+  "introduction": "Félicitations pour avoir collecté tous les fragments de la citation mystère !",
+  "task": "Votre mission finale consiste à rédiger une courte nouvelle (300-500 mots) inspirée par :",
+  "elements": [
+    "La citation que vous avez reconstituée",
+    "Les indices musicaux que vous avez identifiés",
+    "L'histoire de notre établissement"
+  ],
+  "guidelines": [
+    "Votre texte doit inclure la citation complète",
+    "Intégrez les thèmes et émotions identifiés dans l'extrait musical",
+    "Faites référence à au moins un élément historique découvert pendant votre parcours"
+  ],
+  "submission": "Envoyez votre nouvelle par email en utilisant le bouton ci-dessous.",
+  "conclusion": "Cette création sera évaluée sur votre créativité, votre compréhension des éléments collectés et votre expression écrite."
+}</code></pre>
+            </div>
+            <p>Adaptez ces instructions selon l'épreuve finale que vous souhaitez proposer aux participants.</p>
+        </section>
+        
+        <section id="mini-games">
+            <h3>4.3 mini-games.json</h3>
+            <p>Ce fichier configure les mini-jeux disponibles :</p>
+            <div class="json-example">
+<pre><code>[
+  {
+    "id": "puzzle",
+    "title": "Puzzle Historique",
+    "description": "Reconstituez cette image historique pour découvrir un indice important.",
+    "image": "images/games/puzzle.jpg",
+    "url": "games/puzzle.html",
+    "difficulty": "Facile",
+    "quoteFragment": 0,
+    "completed": false
+  },
+  {
+    "id": "quiz",
+    "title": "Quiz de Connaissances",
+    "description": "Testez vos connaissances sur l'histoire de notre établissement.",
+    "image": "images/games/quiz.jpg",
+    "url": "games/quiz.html",
+    "difficulty": "Moyen",
+    "quoteFragment": 1,
+    "completed": false
+  },
+  // ... autres mini-jeux
+]</code></pre>
+            </div>
+            <p>Pour chaque mini-jeu, personnalisez :</p>
+            <ul>
+                <li><code>id</code> : Identifiant unique du jeu</li>
+                <li><code>title</code> et <code>description</code> : Titre et description du jeu</li>
+                <li><code>image</code> : Chemin vers l'image représentant le jeu</li>
+                <li><code>url</code> : URL du jeu (si vous avez des jeux externes)</li>
+                <li><code>difficulty</code> : Niveau de difficulté</li>
+                <li><code>quoteFragment</code> : Index du fragment de citation à débloquer (voir quote-fragments.json)</li>
+            </ul>
+        </section>
+        
+        <section id="music-clues">
+            <h3>4.4 music-clues.json</h3>
+            <p>Ce fichier configure les indices musicaux pour l'épreuve finale :</p>
+            <div class="json-example">
+<pre><code>{
+  "clips": [
+    {
+      "id": "clip1",
+      "title": "Extrait 1",
+      "src": "clips/clip.mp4",
+      "questions": [
+        {
+          "id": "theme",
+          "text": "Quel est le thème principal évoqué par cette musique ?",
+          "description": "Identifiez l'émotion ou le concept dominant"
+        },
+        {
+          "id": "period",
+          "text": "À quelle période ou contexte associeriez-vous cette musique ?",
+          "description": "Époque, saison, moment de la journée, etc."
+        },
+        {
+          "id": "emotion",
+          "text": "Quelle émotion principale cette musique suscite-t-elle ?",
+          "description": "Décrivez ce que vous ressentez en l'écoutant"
+        }
+      ]
+    }
+  ]
+}</code></pre>
+            </div>
+            <p>Personnalisez les extraits musicaux et les questions associées selon votre thématique.</p>
+        </section>
+        
+        <section id="quote-fragments">
+            <h3>4.5 quote-fragments.json</h3>
+            <p>Ce fichier contient les fragments de la citation mystère à reconstituer :</p>
+            <div class="json-example">
+<pre><code>{
+  "author": "Auteur de la citation",
+  "source": "Source de la citation (livre, discours, etc.)",
+  "fragments": [
+    "Premier fragment de la citation.",
+    "Deuxième fragment de la citation.",
+    "Troisième fragment de la citation.",
+    "Quatrième fragment de la citation.",
+    "Cinquième fragment de la citation.",
+    "Sixième fragment de la citation."
+  ]
+}</code></pre>
+            </div>
+            <p>Remplacez l'auteur, la source et les fragments par votre propre citation, divisée en autant de parties que vous avez de mini-jeux.</p>
+        </section>
+        
+        <section id="virtual-visits">
+            <h3>4.6 virtual-visits.json</h3>
+            <p>Ce fichier configure les visites virtuelles disponibles :</p>
+            <div class="json-example">
+<pre><code>[
+  {
+    "id": "hall",
+    "name": "Hall d'entrée",
+    "description": "Le hall principal, point de départ de votre exploration.",
+    "embedUrl": "https://exemple.com/visite-virtuelle/hall",
+    "qrLocation": "Sur le panneau d'affichage près de l'entrée",
+    "linkedGame": "puzzle"
+  },
+  {
+    "id": "library",
+    "name": "Bibliothèque",
+    "description": "Un espace de savoir avec des milliers d'ouvrages.",
+    "embedUrl": "https://exemple.com/visite-virtuelle/bibliotheque",
+    "qrLocation": "Sur l'étagère des livres d'histoire",
+    "linkedGame": "quiz"
+  },
+  // ... autres lieux
+]</code></pre>
+            </div>
+            <p>Pour chaque lieu, personnalisez :</p>
+            <ul>
+                <li><code>id</code> : Identifiant unique du lieu</li>
+                <li><code>name</code> et <code>description</code> : Nom et description du lieu</li>
+                <li><code>embedUrl</code> : URL de la visite virtuelle à intégrer (iframe)</li>
+                <li><code>qrLocation</code> : Indice sur l'emplacement du QR code dans la visite</li>
+                <li><code>linkedGame</code> : ID du mini-jeu associé à ce lieu</li>
+            </ul>
+        </section>
+        
+        <section id="hacker-clues">
+            <h3>4.7 hacker-clues.json</h3>
+            <p>Ce fichier contient les indices pour le mode hacker :</p>
+            <div class="json-example">
+<pre><code>[
+  {
+    "id": "clue1",
+    "text": "Cherchez dans le code source de la page d'accueil.",
+    "hint": "Inspectez l'élément avec la classe 'secret-container'."
+  },
+  {
+    "id": "clue2",
+    "text": "La console JavaScript peut révéler des secrets.",
+    "hint": "Essayez d'exécuter la commande 'revealSecret()' dans la console."
+  },
+  // ... autres indices
+]</code></pre>
+            </div>
+            <p>Personnalisez les indices et astuces selon les défis que vous souhaitez intégrer au mode hacker.</p>
+        </section>
+        
+        <section id="hacker-phrases">
+            <h3>4.8 hacker-phrases.json</h3>
+            <p>Ce fichier contient les phrases qui apparaissent dans le mode hacker :</p>
+            <div class="json-example">
+<pre><code>[
+  "Accès au système en cours...",
+  "Déchiffrement des données...",
+  "Firewall contourné avec succès.",
+  "Extraction des fichiers secrets...",
+  "Attention : intrusion détectée !",
+  // ... autres phrases
+]</code></pre>
+            </div>
+            <p>Personnalisez ces phrases pour créer l'ambiance souhaitée dans le mode hacker.</p>
+        </section>
+    </section>
+    
+    <section id="mode-hacker">
+        <h2>5. Mode Hacker</h2>
+        
+        <section id="activation-hacker">
+            <h3>5.1 Activation du mode Hacker</h3>
+            <p>Le mode Hacker est une fonctionnalité cachée qui ajoute une couche supplémentaire d'énigmes et de défis pour les utilisateurs plus avancés. Il peut être activé de plusieurs façons :</p>
+            
+            <ul>
+                <li>En saisissant un code secret dans la console JavaScript</li>
+                <li>En cliquant sur une séquence spécifique d'éléments sur la page</li>
+                <li>En découvrant et en suivant des indices cachés dans le code source</li>
+            </ul>
+            
+            <p>Par défaut, le code pour activer le mode Hacker est défini dans <code>js/hacker-theme.js</code> :</p>
+            <pre><code>// Activation par la console
+function activateHackerMode() {
+    // Code d'activation
+}
+
+// Activation par séquence de clics
+const secretSequence = ['logo', 'title', 'footer', 'footer'];
+</code></pre>
+            <p>Vous pouvez personnaliser ces méthodes d'activation selon vos préférences.</p>
+        </section>
+        
+        <section id="personnalisation-hacker">
+            <h3>5.2 Personnalisation du mode Hacker</h3>
+            <p>Pour personnaliser le mode Hacker :</p>
+            
+            <h4>Apparence</h4>
+            <p>Le style visuel du mode Hacker est défini dans <code>css/hacker-theme.css</code>. Vous pouvez modifier :</p>
+            <ul>
+                <li>Les couleurs (généralement des tons de vert sur fond noir)</li>
+                <li>Les effets de glitch et de distorsion</li>
+                <li>Les animations et transitions</li>
+            </ul>
+            
+            <h4>Défis et énigmes</h4>
+            <p>Les défis du mode Hacker sont configurés dans plusieurs fichiers :</p>
+            <ul>
+                <li><code>js/hacker-effects.js</code> : Effets visuels et comportements</li>
+                <li><code>data/hacker-clues.json</code> : Indices et astuces</li>
+                <li><code>data/hacker-phrases.json</code> : Messages et phrases</li>
+            </ul>
+            <p>Vous pouvez ajouter vos propres défis en modifiant ces fichiers et en ajoutant de nouvelles fonctionnalités dans <code>js/hacker-effects.js</code>.</p>
+        </section>
+        
+        <section id="effets-hacker">
+            <h3>5.3 Effets visuels et sonores</h3>
+            <p>Le mode Hacker inclut plusieurs effets visuels et sonores pour créer une ambiance immersive :</p>
+            
+            <h4>Effets visuels</h4>
+            <ul>
+                <li><strong>Pluie de code</strong> : Animation de caractères qui tombent en cascade (style Matrix)</li>
+                <li><strong>Effet de glitch</strong> : Distorsion temporaire des éléments de la page</li>
+                <li><strong>Terminal</strong> : Interface de terminal qui apparaît pour certaines interactions</li>
+            </ul>
+            
+            <h4>Effets sonores</h4>
+            <ul>
+                <li><strong>Sons de frappe</strong> : Lors de la saisie dans le terminal</li>
+                <li><strong>Sons d'alerte</strong> : Pour les notifications et avertissements</li>
+                <li><strong>Sons d'ambiance</strong> : Fond sonore électronique</li>
+            </ul>
+            
+            <p>Ces effets sont contrôlés par les fichiers dans <code>js/</code> et les sons sont stockés dans <code>sounds/</code>. Vous pouvez les personnaliser ou en ajouter de nouveaux selon vos préférences.</p>
+        </section>
+    </section>
+    
+    <section id="fonctionnalites">
+        <h2>6. Fonctionnalités principales</h2>
+        
+        <section id="visites-virtuelles">
+            <h3>6.1 Visites virtuelles</h3>
+            <p>La fonctionnalité de visites virtuelles permet aux utilisateurs d'explorer différents lieux en 360° et de découvrir des QR codes cachés qui débloquent des mini-jeux.</p>
+            
+            <h4>Configuration</h4>
+            <p>Les visites virtuelles sont configurées dans <code>data/virtual-visits.json</code>. Pour chaque lieu, vous devez fournir :</p>
+            <ul>
+                <li>Un identifiant unique</li>
+                <li>Un nom et une description</li>
+                <li>L'URL de la visite virtuelle à intégrer</li>
+                <li>L'emplacement du QR code caché</li>
+                <li>Le mini-jeu associé à ce lieu</li>
+            </ul>
+            
+            <h4>Intégration des visites</h4>
+            <p>Les visites virtuelles peuvent être intégrées de plusieurs façons :</p>
+            <ul>
+                <li><strong>Services tiers</strong> : Utilisez des services comme Google Street View, Matterport, ou ThingLink</li>
+                <li><strong>Panoramas 360°</strong> : Intégrez des images panoramiques avec des bibliothèques comme Pannellum</li>
+                <li><strong>Visites personnalisées</strong> : Créez vos propres visites avec des technologies comme A-Frame (WebVR)</li>
+            </ul>
+            
+            <div class="note">
+                <strong>Note :</strong> Si vous n'avez pas accès à des visites virtuelles professionnelles, vous pouvez utiliser des images panoramiques simples ou même des galeries d'images interactives comme alternative.
+            </div>
+        </section>
+        
+        <section id="mini-jeux">
+            <h3>6.2 Mini-jeux</h3>
+            <p>Les mini-jeux sont des défis interactifs que les utilisateurs doivent compléter pour collecter des fragments de la citation mystère.</p>
+            
+            <h4>Types de mini-jeux</h4>
+            <p>Le template inclut plusieurs types de mini-jeux :</p>
+            <ul>
+                <li><strong>Puzzle</strong> : Reconstituer une image</li>
+                <li><strong>Quiz</strong> : Répondre à des questions</li>
+                <li><strong>Memory</strong> : Jeu de mémoire avec des paires à trouver</li>
+                <li><strong>Mots croisés</strong> : Compléter une grille de mots croisés</li>
+                <li><strong>Énigmes</strong> : Résoudre des énigmes textuelles</li>
+                <li><strong>Recherche de mots</strong> : Trouver des mots cachés dans une grille</li>
+            </ul>
+            
+            <h4>Ajout de nouveaux jeux</h4>
+            <p>Pour ajouter un nouveau mini-jeu :</p>
+            <ol>
+                <li>Créez le fichier HTML du jeu dans un dossier approprié</li>
+                <li>Ajoutez les scripts JavaScript nécessaires</li>
+                <li>Configurez le jeu dans <code>data/mini-games.json</code></li>
+                <li>Créez un QR code pointant vers ce jeu</li>
+                <li>Associez le jeu à une visite virtuelle dans <code>data/virtual-visits.json</code></li>
+            </ol>
+        </section>
+        
+        <section id="citation-mystere">
+            <h3>6.3 Citation mystère</h3>
+            <p>La citation mystère est un élément central de la chasse au trésor. Les utilisateurs doivent compléter les mini-jeux pour collecter tous les fragments et reconstituer la citation complète.</p>
+            
+            <h4>Configuration</h4>
+            <p>La citation est configurée dans <code>data/quote-fragments.json</code> :</p>
+            <ul>
+                <li>Définissez l'auteur et la source de la citation</li>
+                <li>Divisez la citation en fragments (un par mini-jeu)</li>
+                <li>Assurez-vous que chaque fragment a du sens individuellement</li>
+            </ul>
+            
+            <h4>Affichage progressif</h4>
+            <p>À mesure que l'utilisateur complète les mini-jeux, les fragments sont débloqués et affichés dans la section "Citation mystère" de la page des mini-jeux. Une fois tous les fragments collectés, la citation complète est révélée et l'utilisateur peut accéder à l'épreuve finale.</p>
+        </section>
+        
+        <section id="epreuve-finale">
+            <h3>6.4 Épreuve finale</h3>
+            <p>L'épreuve finale est débloquée une fois que l'utilisateur a collecté tous les fragments de la citation mystère. Elle consiste généralement en une tâche créative basée sur les éléments découverts pendant la chasse au trésor.</p>
+            
+            <h4>Configuration</h4>
+            <p>L'épreuve finale est configurée dans <code>data/final-instructions.json</code> et <code>data/email-info.json</code> :</p>
+            <ul>
+                <li>Définissez les instructions et consignes pour l'épreuve</li>
+                <li>Configurez les informations pour l'envoi par email</li>
+                <li>Personnalisez les messages de félicitations</li>
+            </ul>
+            
+            <h4>Personnalisation</h4>
+            <p>Vous pouvez adapter l'épreuve finale à vos objectifs pédagogiques ou ludiques :</p>
+            <ul>
+                <li><strong>Rédaction</strong> : Demandez aux utilisateurs d'écrire une histoire ou un poème</li>
+                <li><strong>Création artistique</strong> : Proposez de créer un dessin ou une composition</li>
+                <li><strong>Réflexion</strong> : Invitez à une analyse ou une réflexion sur un thème</li>
+                <li><strong>Projet</strong> : Suggérez un mini-projet lié à la thématique</li>
+            </ul>
+        </section>
+    </section>
+    
+    <section id="profil-utilisateur">
+        <h2>7. Système de profil utilisateur</h2>
+        <p>Le template inclut un système de profil utilisateur qui permet de sauvegarder la progression et les préférences de l'utilisateur localement dans son navigateur.</p>
+        
+        <h4>Fonctionnalités du profil</h4>
+        <ul>
+            <li><strong>Sauvegarde de la progression</strong> : Mini-jeux complétés, fragments collectés, etc.</li>
+            <li><strong>Préférences d'accessibilité</strong> : Taille de texte, contraste, etc.</li>
+            <li><strong>Thèmes visuels</strong> : Choix du thème d'affichage</li>
+            <li><strong>Statistiques</strong> : Temps passé, score, etc.</li>
+        </ul>
+        
+        <h4>Implémentation</h4>
+        <p>Le système de profil est implémenté dans <code>js/core/user-profile-manager.js</code> et utilise le localStorage du navigateur pour stocker les données. Vous pouvez personnaliser les informations stockées et les fonctionnalités du profil selon vos besoins.</p>
+        
+        <div class="warning">
+            <strong>Attention :</strong> Les données stockées dans localStorage sont spécifiques au navigateur et à l'appareil de l'utilisateur. Si l'utilisateur change de navigateur ou d'appareil, sa progression ne sera pas disponible.
+        </div>
+    </section>
+    
+    <section id="deploiement">
+        <h2>8. Déploiement</h2>
+        <p>Le template peut être déployé sur n'importe quel serveur web statique. Voici les étapes générales pour déployer votre chasse au trésor personnalisée :</p>
+        
+        <h4>Préparation</h4>
+        <ol>
+            <li>Personnalisez tous les fichiers selon vos besoins</li>
+            <li>Optimisez les images et autres ressources</li>
+            <li>Testez localement pour vous assurer que tout fonctionne correctement</li>
+        </ol>
+        
+        <h4>Options de déploiement</h4>
+        <ul>
+            <li><strong>Hébergement statique</strong> : GitHub Pages, Netlify, Vercel, etc.</li>
+            <li><strong>Serveur web traditionnel</strong> : Apache, Nginx, etc.</li>
+            <li><strong>Hébergement partagé</strong> : Services d'hébergement web classiques</li>
+        </ul>
+        
+        <h4>Étapes de déploiement (exemple avec GitHub Pages)</h4>
+        <ol>
+            <li>Créez un dépôt GitHub pour votre projet</li>
+            <li>Poussez tous vos fichiers vers ce dépôt</li>
+            <li>Activez GitHub Pages dans les paramètres du dépôt</li>
+            <li>Votre site sera disponible à l'adresse <code>https://votre-nom-utilisateur.github.io/nom-du-depot</code></li>
+        </ol>
+        
+        <div class="note">
+            <strong>Note :</strong> Si vous utilisez des visites virtuelles ou des services tiers, assurez-vous qu'ils sont accessibles depuis votre domaine de déploiement (problèmes potentiels de CORS).
+        </div>
+    </section>
+    
+    <section id="conseils">
+        <h2>9. Conseils et bonnes pratiques</h2>
+        
+        <h4>Conception</h4>
+        <ul>
+            <li><strong>Cohérence thématique</strong> : Maintenez une cohérence visuelle et narrative dans toute l'expérience</li>
+            <li><strong>Difficulté progressive</strong> : Commencez par des défis simples et augmentez progressivement la difficulté</li>
+            <li><strong>Indices clairs</strong> : Fournissez des indices suffisamment clairs pour guider les utilisateurs sans frustration excessive</li>
+            <li><strong>Feedback immédiat</strong> : Donnez un retour immédiat aux actions des utilisateurs</li>
+        </ul>
+        
+        <h4>Technique</h4>
+        <ul>
+            <li><strong>Optimisation des ressources</strong> : Compressez les images et autres médias pour des temps de chargement rapides</li>
+            <li><strong>Tests multi-navigateurs</strong> : Testez sur différents navigateurs et appareils</li>
+            <li><strong>Sauvegarde régulière</strong> : Sauvegardez régulièrement la progression des utilisateurs</li>
+            <li><strong>Accessibilité</strong> : Assurez-vous que votre chasse au trésor est accessible à tous les utilisateurs</li>
+        </ul>
+        
+        <h4>Pédagogie</h4>
+        <ul>
+            <li><strong>Objectifs clairs</strong> : Définissez clairement les objectifs pédagogiques de chaque activité</li>
+            <li><strong>Contenu adapté</strong> : Adaptez le contenu au niveau et aux intérêts de votre public cible</li>
+            <li><strong>Équilibre ludique/éducatif</strong> : Trouvez un bon équilibre entre divertissement et apprentissage</li>
+            <li><strong>Réflexion finale</strong> : Incluez une phase de réflexion ou de synthèse à la fin de l'expérience</li>
+        </ul>
+    </section>
+    
+    <a href="#" class="back-to-top">↑</a>
+    
+    <script>
+        // Script pour le bouton "Retour en haut"
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Script pour les liens de la table des matières
+        document.querySelectorAll('.toc a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
