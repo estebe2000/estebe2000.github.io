@@ -1,0 +1,276 @@
+{
+  "documents": [
+    {
+      "id": 1,
+      "title": "Rapport annuel 2024",
+      "description": "Rapport annuel de l'entreprise pour l'année 2024",
+      "category": "Rapports",
+      "type": "pdf",
+      "path": "documents/rapports/rapport_annuel_2024.pdf",
+      "size": 2458000,
+      "uploadedBy": 8,
+      "uploadDate": "2025-01-15",
+      "lastModified": "2025-01-15",
+      "tags": ["rapport", "annuel", "2024", "finance"],
+      "access": ["Direction", "Finance"],
+      "isPublic": false
+    },
+    {
+      "id": 2,
+      "title": "Guide d'accueil des nouveaux employés",
+      "description": "Document d'accueil pour les nouveaux employés de l'entreprise",
+      "category": "RH",
+      "type": "pdf",
+      "path": "documents/rh/guide_accueil_nouveaux_employes.pdf",
+      "size": 1245000,
+      "uploadedBy": 6,
+      "uploadDate": "2024-11-10",
+      "lastModified": "2025-01-05",
+      "tags": ["guide", "accueil", "nouveaux employés", "rh"],
+      "access": ["all"],
+      "isPublic": true
+    },
+    {
+      "id": 3,
+      "title": "Plan stratégique 2025-2027",
+      "description": "Plan stratégique de l'entreprise pour les années 2025 à 2027",
+      "category": "Stratégie",
+      "type": "pptx",
+      "path": "documents/strategie/plan_strategique_2025_2027.pptx",
+      "size": 3560000,
+      "uploadedBy": 8,
+      "uploadDate": "2025-01-20",
+      "lastModified": "2025-02-05",
+      "tags": ["stratégie", "plan", "2025", "2027"],
+      "access": ["Direction", "Manager"],
+      "isPublic": false
+    },
+    {
+      "id": 4,
+      "title": "Procédure de demande de congés",
+      "description": "Procédure pour effectuer une demande de congés",
+      "category": "RH",
+      "type": "docx",
+      "path": "documents/rh/procedure_demande_conges.docx",
+      "size": 580000,
+      "uploadedBy": 6,
+      "uploadDate": "2024-10-15",
+      "lastModified": "2024-10-15",
+      "tags": ["procédure", "congés", "rh"],
+      "access": ["all"],
+      "isPublic": true
+    },
+    {
+      "id": 5,
+      "title": "Rapport trimestriel Q4 2024",
+      "description": "Rapport financier du quatrième trimestre 2024",
+      "category": "Rapports",
+      "type": "xlsx",
+      "path": "documents/rapports/rapport_trimestriel_q4_2024.xlsx",
+      "size": 1850000,
+      "uploadedBy": 10,
+      "uploadDate": "2025-01-10",
+      "lastModified": "2025-01-12",
+      "tags": ["rapport", "trimestriel", "q4", "2024", "finance"],
+      "access": ["Direction", "Finance"],
+      "isPublic": false
+    },
+    {
+      "id": 6,
+      "title": "Plan marketing 2025",
+      "description": "Plan marketing de l'entreprise pour l'année 2025",
+      "category": "Marketing",
+      "type": "pptx",
+      "path": "documents/marketing/plan_marketing_2025.pptx",
+      "size": 2750000,
+      "uploadedBy": 5,
+      "uploadDate": "2025-01-05",
+      "lastModified": "2025-01-25",
+      "tags": ["marketing", "plan", "2025"],
+      "access": ["Direction", "Marketing"],
+      "isPublic": false
+    },
+    {
+      "id": 7,
+      "title": "Règlement intérieur",
+      "description": "Règlement intérieur de l'entreprise",
+      "category": "RH",
+      "type": "pdf",
+      "path": "documents/rh/reglement_interieur.pdf",
+      "size": 950000,
+      "uploadedBy": 6,
+      "uploadDate": "2024-09-01",
+      "lastModified": "2024-09-01",
+      "tags": ["règlement", "intérieur", "rh"],
+      "access": ["all"],
+      "isPublic": true
+    },
+    {
+      "id": 8,
+      "title": "Spécifications techniques produit X",
+      "description": "Spécifications techniques détaillées du produit X",
+      "category": "Technique",
+      "type": "pdf",
+      "path": "documents/technique/specifications_produit_x.pdf",
+      "size": 3250000,
+      "uploadedBy": 7,
+      "uploadDate": "2025-02-10",
+      "lastModified": "2025-02-15",
+      "tags": ["technique", "spécifications", "produit x"],
+      "access": ["Direction", "Technique"],
+      "isPublic": false
+    },
+    {
+      "id": 9,
+      "title": "Organigramme de l'entreprise",
+      "description": "Organigramme détaillé de l'entreprise",
+      "category": "RH",
+      "type": "pdf",
+      "path": "documents/rh/organigramme.pdf",
+      "size": 750000,
+      "uploadedBy": 6,
+      "uploadDate": "2025-01-15",
+      "lastModified": "2025-02-01",
+      "tags": ["organigramme", "structure", "rh"],
+      "access": ["all"],
+      "isPublic": true
+    },
+    {
+      "id": 10,
+      "title": "Budget prévisionnel 2025",
+      "description": "Budget prévisionnel de l'entreprise pour l'année 2025",
+      "category": "Finance",
+      "type": "xlsx",
+      "path": "documents/finance/budget_previsionnel_2025.xlsx",
+      "size": 1650000,
+      "uploadedBy": 10,
+      "uploadDate": "2024-12-15",
+      "lastModified": "2025-01-10",
+      "tags": ["budget", "prévisionnel", "2025", "finance"],
+      "access": ["Direction", "Finance", "Manager"],
+      "isPublic": false
+    },
+    {
+      "id": 11,
+      "title": "Plan des locaux",
+      "description": "Plan détaillé des locaux de l'entreprise",
+      "category": "Administration",
+      "type": "pdf",
+      "path": "documents/administration/plan_locaux.pdf",
+      "size": 4500000,
+      "uploadedBy": 1,
+      "uploadDate": "2024-10-05",
+      "lastModified": "2024-10-05",
+      "tags": ["plan", "locaux", "bureaux"],
+      "access": ["all"],
+      "isPublic": true
+    },
+    {
+      "id": 12,
+      "title": "Procédure d'urgence et évacuation",
+      "description": "Procédure à suivre en cas d'urgence et plan d'évacuation",
+      "category": "Sécurité",
+      "type": "pdf",
+      "path": "documents/securite/procedure_urgence_evacuation.pdf",
+      "size": 1250000,
+      "uploadedBy": 1,
+      "uploadDate": "2024-09-15",
+      "lastModified": "2024-09-15",
+      "tags": ["sécurité", "urgence", "évacuation", "procédure"],
+      "access": ["all"],
+      "isPublic": true
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Rapports",
+      "icon": "chart-bar",
+      "color": "#3498db"
+    },
+    {
+      "id": 2,
+      "name": "RH",
+      "icon": "users",
+      "color": "#e74c3c"
+    },
+    {
+      "id": 3,
+      "name": "Stratégie",
+      "icon": "chess",
+      "color": "#2ecc71"
+    },
+    {
+      "id": 4,
+      "name": "Marketing",
+      "icon": "bullhorn",
+      "color": "#9b59b6"
+    },
+    {
+      "id": 5,
+      "name": "Technique",
+      "icon": "cogs",
+      "color": "#34495e"
+    },
+    {
+      "id": 6,
+      "name": "Finance",
+      "icon": "money-bill-wave",
+      "color": "#f39c12"
+    },
+    {
+      "id": 7,
+      "name": "Administration",
+      "icon": "building",
+      "color": "#1abc9c"
+    },
+    {
+      "id": 8,
+      "name": "Sécurité",
+      "icon": "shield-alt",
+      "color": "#e67e22"
+    }
+  ],
+  "fileTypes": [
+    {
+      "extension": "pdf",
+      "icon": "file-pdf",
+      "color": "#e74c3c"
+    },
+    {
+      "extension": "docx",
+      "icon": "file-word",
+      "color": "#3498db"
+    },
+    {
+      "extension": "xlsx",
+      "icon": "file-excel",
+      "color": "#2ecc71"
+    },
+    {
+      "extension": "pptx",
+      "icon": "file-powerpoint",
+      "color": "#e67e22"
+    },
+    {
+      "extension": "txt",
+      "icon": "file-alt",
+      "color": "#95a5a6"
+    },
+    {
+      "extension": "zip",
+      "icon": "file-archive",
+      "color": "#f39c12"
+    },
+    {
+      "extension": "jpg",
+      "icon": "file-image",
+      "color": "#9b59b6"
+    },
+    {
+      "extension": "png",
+      "icon": "file-image",
+      "color": "#9b59b6"
+    }
+  ]
+}

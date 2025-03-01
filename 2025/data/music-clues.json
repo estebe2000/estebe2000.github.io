@@ -1,7 +1,46 @@
 {
-  "validClues": [
-    ["A", "a"],
-    ["B", "b"],
-    ["C", "c"]
-  ]
+  "questions": [
+    {
+      "id": "theme",
+      "question": "Quel est le thème principal de cette chanson ?",
+      "description": "Identifiez le sujet central abordé dans les paroles."
+    },
+    {
+      "id": "period",
+      "question": "À quelle époque ou période cette chanson fait-elle référence ?",
+      "description": "Identifiez la période historique ou l'époque évoquée dans la chanson."
+    },
+    {
+      "id": "emotion",
+      "question": "Quelle est l'émotion principale transmise par cette chanson ?",
+      "description": "Identifiez le sentiment dominant que l'artiste cherche à communiquer."
+    }
+  ],
+  "validClues": {
+    "clip1": [
+      ["amour", "passion", "romance"],
+      ["années 40", "après-guerre", "1945"],
+      ["joie", "bonheur", "espoir"]
+    ],
+    "clip2": [
+      ["séparation", "abandon", "rupture"],
+      ["années 50", "1959", "fin des années 50"],
+      ["désespoir", "tristesse", "mélancolie"]
+    ],
+    "clip3": [
+      ["souvenirs", "nostalgie", "passé"],
+      ["années 70", "1975", "été"],
+      ["nostalgie", "douceur", "mélancolie"]
+    ],
+    "clip4": [
+      ["art", "artistes", "bohème"],
+      ["années 60", "1965", "paris d'autrefois"],
+      ["nostalgie", "mélancolie", "regret"]
+    ],
+    "clip5": [
+      ["enfance", "jeunesse", "souvenirs d'enfance"],
+      ["années 80", "1985"],
+      ["tendresse", "nostalgie", "amour parental"]
+    ]
+  }
 }

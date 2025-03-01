@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portail PME</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Nom de l'Entreprise</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="demarches.html">Démarches</a></li>
+                    <li><a href="guide.html">Guide d'accueil</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="plan.html">Plan des locaux</a></li>
+                    <li><a href="../intranet/login.html" class="btn-login">Intranet <i class="fas fa-lock"></i></a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <div class="container">
+                <h1 class="section-title">Contactez-nous</h1>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Nos coordonnées</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h3>Adresse</h3>
+                                        <p>123 Rue de l'Exemple<br>75000 Paris<br>France</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h3>Téléphone</h3>
+                                        <p>Standard : 01 23 45 67 89</p>
+                                        <p>Service client : 01 23 45 67 90</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h3>Email</h3>
+                                        <p>Contact général : <a href="mailto:contact@entreprise.fr">contact@entreprise.fr</a></p>
+                                        <p>Service client : <a href="mailto:support@entreprise.fr">support@entreprise.fr</a></p>
+                                        <p>Recrutement : <a href="mailto:recrutement@entreprise.fr">recrutement@entreprise.fr</a></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h3>Horaires d'ouverture</h3>
+                                        <p>Lundi - Vendredi : 9h00 - 18h00</p>
+                                        <p>Samedi : Fermé</p>
+                                        <p>Dimanche : Fermé</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h2 class="card-title">Plan d'accès</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="map-container">
+                                    <!-- Dans une vraie application, ce serait une carte Google Maps ou OpenStreetMap -->
+                                    <div class="placeholder-map">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <p>Carte interactive</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="directions mt-3">
+                                    <h3>Comment nous rejoindre</h3>
+                                    
+                                    <div class="direction-item">
+                                        <div class="direction-icon">
+                                            <i class="fas fa-subway"></i>
+                                        </div>
+                                        <div class="direction-text">
+                                            <h4>En métro</h4>
+                                            <p>Ligne 1, 4, 7 - Station Châtelet</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="direction-item">
+                                        <div class="direction-icon">
+                                            <i class="fas fa-bus"></i>
+                                        </div>
+                                        <div class="direction-text">
+                                            <h4>En bus</h4>
+                                            <p>Lignes 38, 47, 58, 70, 72, 74, 75, 96</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="direction-item">
+                                        <div class="direction-icon">
+                                            <i class="fas fa-car"></i>
+                                        </div>
+                                        <div class="direction-text">
+                                            <h4>En voiture</h4>
+                                            <p>Parking public à proximité</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Formulaire de contact</h2>
+                            </div>
+                            <div class="card-body">
+                                <form id="contactForm" class="contact-form">
+                                    <div class="form-group">
+                                        <label for="name">Nom complet *</label>
+                                        <input type="text" id="name" name="name" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" name="email" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="phone">Téléphone</label>
+                                        <input type="tel" id="phone" name="phone" class="form-control">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="subject">Sujet *</label>
+                                        <select id="subject" name="subject" class="form-control" required>
+                                            <option value="">Sélectionnez un sujet</option>
+                                            <option value="information">Demande d'information</option>
+                                            <option value="support">Support technique</option>
+                                            <option value="commercial">Service commercial</option>
+                                            <option value="recrutement">Recrutement</option>
+                                            <option value="autre">Autre</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="message">Message *</label>
+                                        <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="privacy" name="privacy" required>
+                                            <label for="privacy">J'accepte que mes données soient traitées conformément à la politique de confidentialité *</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-paper-plane"></i> Envoyer le message
+                                        </button>
+                                    </div>
+                                    
+                                    <p class="form-note">* Champs obligatoires</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Nom de l'Entreprise</h4>
+                    <p>Une PME dynamique au service de ses clients</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="presentation.html">Présentation</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="../intranet/login.html">Intranet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Rue de l'Exemple, 75000 Paris</p>
+                    <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+                    <p><i class="fas fa-envelope"></i> contact@entreprise.fr</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nom de l'Entreprise. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Script spécifique à la page de contact
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simuler l'envoi du formulaire
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+                    
+                    // Simuler un délai réseau
+                    setTimeout(() => {
+                        // Afficher un message de succès
+                        const formContainer = contactForm.parentElement;
+                        formContainer.innerHTML = `
+                            <div class="success-message">
+                                <div class="success-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h3>Message envoyé avec succès !</h3>
+                                <p>Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.</p>
+                            </div>
+                        `;
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

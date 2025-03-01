@@ -1,0 +1,266 @@
+{
+  "leaves": [
+    {
+      "id": 1,
+      "employeeId": 2,
+      "type": "Congés payés",
+      "startDate": "2025-03-10",
+      "endDate": "2025-03-15",
+      "duration": 5,
+      "status": "Approuvé",
+      "approvedBy": 5,
+      "approvedDate": "2025-02-15",
+      "reason": "Vacances familiales",
+      "comments": "Demande approuvée par la directrice marketing"
+    },
+    {
+      "id": 2,
+      "employeeId": 3,
+      "type": "Congés payés",
+      "startDate": "2025-03-20",
+      "endDate": "2025-03-25",
+      "duration": 5,
+      "status": "Approuvé",
+      "approvedBy": 6,
+      "approvedDate": "2025-02-20",
+      "reason": "Voyage personnel",
+      "comments": "Demande approuvée par le directeur RH"
+    },
+    {
+      "id": 3,
+      "employeeId": 4,
+      "type": "Congés payés",
+      "startDate": "2025-04-05",
+      "endDate": "2025-04-12",
+      "duration": 7,
+      "status": "Approuvé",
+      "approvedBy": 7,
+      "approvedDate": "2025-03-01",
+      "reason": "Vacances",
+      "comments": "Demande approuvée par la directrice technique"
+    },
+    {
+      "id": 4,
+      "employeeId": 9,
+      "type": "Congés payés",
+      "startDate": "2025-03-15",
+      "endDate": "2025-03-22",
+      "duration": 7,
+      "status": "Approuvé",
+      "approvedBy": 10,
+      "approvedDate": "2025-02-25",
+      "reason": "Vacances",
+      "comments": "Demande approuvée par le directeur financier"
+    },
+    {
+      "id": 5,
+      "employeeId": 5,
+      "type": "Congés payés",
+      "startDate": "2025-05-10",
+      "endDate": "2025-05-20",
+      "duration": 10,
+      "status": "Approuvé",
+      "approvedBy": 8,
+      "approvedDate": "2025-03-01",
+      "reason": "Vacances d'été",
+      "comments": "Demande approuvée par le directeur général"
+    },
+    {
+      "id": 6,
+      "employeeId": 7,
+      "type": "Congés payés",
+      "startDate": "2025-04-15",
+      "endDate": "2025-04-20",
+      "duration": 5,
+      "status": "Approuvé",
+      "approvedBy": 8,
+      "approvedDate": "2025-03-01",
+      "reason": "Vacances",
+      "comments": "Demande approuvée par le directeur général"
+    },
+    {
+      "id": 7,
+      "employeeId": 2,
+      "type": "Congé maladie",
+      "startDate": "2025-02-10",
+      "endDate": "2025-02-12",
+      "duration": 2,
+      "status": "Approuvé",
+      "approvedBy": 5,
+      "approvedDate": "2025-02-10",
+      "reason": "Maladie",
+      "comments": "Certificat médical fourni"
+    },
+    {
+      "id": 8,
+      "employeeId": 4,
+      "type": "Congé sans solde",
+      "startDate": "2025-06-01",
+      "endDate": "2025-06-15",
+      "duration": 14,
+      "status": "En attente",
+      "approvedBy": null,
+      "approvedDate": null,
+      "reason": "Projet personnel",
+      "comments": "Demande en cours d'examen"
+    },
+    {
+      "id": 9,
+      "employeeId": 3,
+      "type": "Formation",
+      "startDate": "2025-04-10",
+      "endDate": "2025-04-12",
+      "duration": 2,
+      "status": "Approuvé",
+      "approvedBy": 6,
+      "approvedDate": "2025-03-01",
+      "reason": "Formation RH avancée",
+      "comments": "Formation approuvée dans le cadre du plan de développement"
+    },
+    {
+      "id": 10,
+      "employeeId": 9,
+      "type": "Congé maladie",
+      "startDate": "2025-02-20",
+      "endDate": "2025-02-21",
+      "duration": 1,
+      "status": "Approuvé",
+      "approvedBy": 10,
+      "approvedDate": "2025-02-20",
+      "reason": "Maladie",
+      "comments": "Certificat médical fourni"
+    }
+  ],
+  "leaveTypes": [
+    {
+      "id": 1,
+      "name": "Congés payés",
+      "color": "#3498db",
+      "icon": "umbrella-beach",
+      "maxDuration": 25,
+      "requiresApproval": true
+    },
+    {
+      "id": 2,
+      "name": "Congé maladie",
+      "color": "#e74c3c",
+      "icon": "hospital",
+      "maxDuration": null,
+      "requiresApproval": false
+    },
+    {
+      "id": 3,
+      "name": "Congé sans solde",
+      "color": "#95a5a6",
+      "icon": "calendar-minus",
+      "maxDuration": 30,
+      "requiresApproval": true
+    },
+    {
+      "id": 4,
+      "name": "Formation",
+      "color": "#9b59b6",
+      "icon": "graduation-cap",
+      "maxDuration": 10,
+      "requiresApproval": true
+    },
+    {
+      "id": 5,
+      "name": "Congé parental",
+      "color": "#2ecc71",
+      "icon": "baby",
+      "maxDuration": null,
+      "requiresApproval": true
+    },
+    {
+      "id": 6,
+      "name": "RTT",
+      "color": "#f39c12",
+      "icon": "clock",
+      "maxDuration": 12,
+      "requiresApproval": true
+    }
+  ],
+  "leaveBalances": [
+    {
+      "employeeId": 1,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 0, "remaining": 25 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    },
+    {
+      "employeeId": 2,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 5, "remaining": 20 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    },
+    {
+      "employeeId": 3,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 5, "remaining": 20 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    },
+    {
+      "employeeId": 4,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 7, "remaining": 18 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    },
+    {
+      "employeeId": 5,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 10, "remaining": 15 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    },
+    {
+      "employeeId": 6,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 0, "remaining": 25 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    },
+    {
+      "employeeId": 7,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 5, "remaining": 20 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    },
+    {
+      "employeeId": 8,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 0, "remaining": 25 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    },
+    {
+      "employeeId": 9,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 7, "remaining": 18 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    },
+    {
+      "employeeId": 10,
+      "year": 2025,
+      "balances": {
+        "1": { "total": 25, "used": 0, "remaining": 25 },
+        "6": { "total": 12, "used": 0, "remaining": 12 }
+      }
+    }
+  ]
+}

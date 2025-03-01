@@ -33,8 +33,10 @@ window.addEventListener('load', () => {
     }
 });
 
-// Function to set up mobile navigation
+// Function to set up mobile navigation - DÉSACTIVÉE
 function setupMobileNavigation() {
+    console.log('Mobile navigation setup disabled in favor of overlay navigation');
+    return; // Sortie immédiate pour désactiver cette fonction
     console.log('Setting up mobile navigation...');
     
     // Get the menu toggle button

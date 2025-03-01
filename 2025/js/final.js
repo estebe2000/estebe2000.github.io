@@ -25,9 +25,41 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
     
+    // Load questions from music clues data
+    loadQuestions(musicCluesData.questions);
+    
     // Initialize the final challenge page
     initFinalChallenge(musicClipsData.clips, musicCluesData.clues, finalInstructionsData.instructions);
 });
+
+/**
+ * Loads the questions from the music clues data
+ * @param {Array} questions - Array of question objects
+ */
+function loadQuestions(questions) {
+    if (!questions || !Array.isArray(questions)) {
+        console.error('Invalid questions data');
+        return;
+    }
+    
+    // Get the question elements
+    const question1 = document.getElementById('question1');
+    const question2 = document.getElementById('question2');
+    const question3 = document.getElementById('question3');
+    
+    // Set the questions
+    if (question1 && questions[0]) {
+        question1.textContent = questions[0].question;
+    }
+    
+    if (question2 && questions[1]) {
+        question2.textContent = questions[1].question;
+    }
+    
+    if (question3 && questions[2]) {
+        question3.textContent = questions[2].question;
+    }
+}
 
 /**
  * Initializes the final challenge page
@@ -381,7 +413,7 @@ function addMusicVisualizer() {
     }
 }
 
-// Function to validate clues directly from HTML onclick
+    // Function to validate clues directly from HTML onclick
 async function validateCluesDirectly() {
     console.log('validateCluesDirectly called from HTML onclick');
     
@@ -407,18 +439,61 @@ async function validateCluesDirectly() {
     const userClue2 = clue2Input.value.trim().toLowerCase();
     const userClue3 = clue3Input.value.trim().toLowerCase();
     
-    // For now, just accept A, B, C as valid answers
-    const isClue1Valid = userClue1 === 'a';
-    const isClue2Valid = userClue2 === 'b';
-    const isClue3Valid = userClue3 === 'c';
+    // Load music clips and clues data
+    const musicClipsData = await dataLoader.getMusicClips();
+    const musicCluesData = await dataLoader.getMusicClues();
+    
+    if (!musicClipsData || !musicCluesData) {
+        console.error('Failed to load music data');
+        alert('Une erreur est survenue lors du chargement des données. Veuillez réessayer.');
+        return;
+    }
+    
+    // Get the current clip (for this example, we'll use clip1)
+    // In a real implementation, you would track which clip is currently playing
+    const currentClipId = 'clip1';
+    const validCluesForCurrentClip = musicCluesData.validClues[currentClipId];
+    
+    if (!validCluesForCurrentClip) {
+        console.error('No valid clues found for clip:', currentClipId);
+        alert('Une erreur est survenue lors de la validation des indices. Veuillez réessayer.');
+        return;
+    }
+    
+    // Normalize text for comparison
+    const normalizeText = (text) => {
+        return text.toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
+            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '') // Remove punctuation
+            .replace(/\s+/g, ' ') // Replace multiple spaces with a single space
+            .trim();
+    };
+    
+    // Check if the user's answers match any of the valid clues
+    const isClue1Valid = validCluesForCurrentClip[0].some(validClue => 
+        normalizeText(userClue1) === normalizeText(validClue));
+    
+    const isClue2Valid = validCluesForCurrentClip[1].some(validClue => 
+        normalizeText(userClue2) === normalizeText(validClue));
+    
+    const isClue3Valid = validCluesForCurrentClip[2].some(validClue => 
+        normalizeText(userClue3) === normalizeText(validClue));
     
     // If any clue is invalid, show an error message
     if (!isClue1Valid || !isClue2Valid || !isClue3Valid) {
         let errorMessage = 'Certains indices ne sont pas corrects :\n';
         
-        if (!isClue1Valid) errorMessage += '- Le thème principal n\'est pas correct (réponse attendue: A).\n';
-        if (!isClue2Valid) errorMessage += '- L\'époque ou période n\'est pas correcte (réponse attendue: B).\n';
-        if (!isClue3Valid) errorMessage += '- L\'émotion principale n\'est pas correcte (réponse attendue: C).\n';
+        if (!isClue1Valid) {
+            errorMessage += `- Le thème principal n'est pas correct. Essayez de penser à : ${validCluesForCurrentClip[0][0]}.\n`;
+        }
+        
+        if (!isClue2Valid) {
+            errorMessage += `- L'époque ou période n'est pas correcte. Essayez de penser à : ${validCluesForCurrentClip[1][0]}.\n`;
+        }
+        
+        if (!isClue3Valid) {
+            errorMessage += `- L'émotion principale n'est pas correcte. Essayez de penser à : ${validCluesForCurrentClip[2][0]}.\n`;
+        }
         
         errorMessage += '\nVeuillez entrer les réponses correctes pour continuer.';
         

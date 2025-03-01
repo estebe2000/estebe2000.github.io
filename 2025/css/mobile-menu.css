@@ -1,8 +1,8 @@
 /* Mobile Menu Styles - Simplified Version */
 
-/* Menu Toggle Button */
+/* Menu Toggle Button - DÉSACTIVÉ */
 #menu-toggle {
-    display: none;
+    display: none !important; /* Toujours caché */
     background-color: #007bff;
     color: white;
     border: none;
@@ -22,10 +22,10 @@
 
 /* Mobile Navigation */
 @media (max-width: 767px) {
-    /* Always show the menu toggle button */
-    #menu-toggle {
+    /* Menu toggle button désactivé */
+    /*#menu-toggle {
         display: flex !important;
-    }
+    }*/
     
     /* Hide the regular navigation by default */
     header nav {

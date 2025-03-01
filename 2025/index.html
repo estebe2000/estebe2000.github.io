@@ -8,49 +8,18 @@
     <link rel="stylesheet" href="css/hacker-theme.css">
     <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="css/themes.css">
-    <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="css/improved-nav.css">
     <link rel="stylesheet" href="css/mobile-menu.css">
     <link rel="stylesheet" href="css/mobile-nav-overlay.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Mobile Menu Toggle Button -->
+    <!-- Mobile Menu Toggle Button - DÉSACTIVÉ en faveur du système d'overlay -->
+    <!-- 
     <button id="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
         <i class="fas fa-bars"></i>
     </button>
-    
-    <script>
-        // Direct inline function to toggle mobile menu
-        function toggleMobileMenu() {
-            console.log('Toggle mobile menu called');
-            var nav = document.querySelector('header nav');
-            var menuToggle = document.getElementById('menu-toggle');
-            
-            // Toggle the is-open class
-            if (nav.classList.contains('is-open')) {
-                nav.classList.remove('is-open');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                console.log('Menu closed');
-            } else {
-                nav.classList.add('is-open');
-                menuToggle.innerHTML = '<i class="fas fa-times"></i>';
-                console.log('Menu opened');
-            }
-        }
-        
-        // Add event listeners to close menu when links are clicked
-        document.addEventListener('DOMContentLoaded', function() {
-            var navLinks = document.querySelectorAll('header nav a');
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    var nav = document.querySelector('header nav');
-                    var menuToggle = document.getElementById('menu-toggle');
-                    nav.classList.remove('is-open');
-                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                });
-            });
-        });
-    </script>
+    -->
     <header>
         <div class="logo">
             <img src="images/logo.png" alt="Logo Lycée Jean Prévost" id="logo-img">
@@ -199,7 +168,7 @@
     <script src="js/mobile-nav.js"></script>
     <script src="js/mobile-nav-overlay.js"></script>
     <script src="js/visual-feedback.js"></script>
-    <script src="js/dropdown.js"></script>
+    <script src="js/improved-nav.js"></script>
     <script src="js/index.js"></script>
     <script src="js/hacker-theme.js"></script>
     <script src="js/secret-phrases.js"></script>

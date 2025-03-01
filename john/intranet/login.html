@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Intranet - Portail PME</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/intranet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-page">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Nom de l'Entreprise</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Retour au portail</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <div class="container">
+                <div class="login-container">
+                    <div class="login-header">
+                        <h2><i class="fas fa-lock"></i> Accès Intranet</h2>
+                        <p>Connectez-vous pour accéder à l'espace intranet</p>
+                    </div>
+                    
+                    <div class="login-form-container">
+                        <form id="loginForm" class="login-form">
+                            <div class="form-group">
+                                <label for="username">Identifiant</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="username" name="username" class="form-control" placeholder="Votre identifiant" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Mot de passe</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-key"></i>
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Votre mot de passe" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group remember-me">
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">Se souvenir de moi</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-sign-in-alt"></i> Connexion
+                                </button>
+                            </div>
+                            
+                            <div id="loginMessage" class="login-message"></div>
+                        </form>
+                        
+                        <div class="login-footer">
+                            <p>Mot de passe oublié ? Contactez le service informatique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nom de l'Entreprise. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

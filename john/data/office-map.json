@@ -1,0 +1,631 @@
+{
+  "floors": [
+    {
+      "id": 1,
+      "name": "Étage 1",
+      "description": "Rez-de-chaussée - Direction, Finance et Logistique",
+      "map": {
+        "width": 1200,
+        "height": 800,
+        "background": "maps/floor1.png",
+        "areas": [
+          {
+            "id": "A",
+            "name": "Aile A - Direction",
+            "color": "#34495e",
+            "coordinates": {
+              "x": 100,
+              "y": 100,
+              "width": 300,
+              "height": 250
+            }
+          },
+          {
+            "id": "E",
+            "name": "Aile E - Finance",
+            "color": "#f39c12",
+            "coordinates": {
+              "x": 450,
+              "y": 100,
+              "width": 300,
+              "height": 250
+            }
+          },
+          {
+            "id": "G",
+            "name": "Aile G - Logistique",
+            "color": "#1abc9c",
+            "coordinates": {
+              "x": 800,
+              "y": 100,
+              "width": 300,
+              "height": 250
+            }
+          },
+          {
+            "id": "common1",
+            "name": "Espaces communs",
+            "color": "#95a5a6",
+            "coordinates": {
+              "x": 100,
+              "y": 400,
+              "width": 1000,
+              "height": 300
+            }
+          }
+        ]
+      },
+      "rooms": [
+        {
+          "id": "A100",
+          "name": "Bureau du Directeur Général",
+          "type": "office",
+          "area": "A",
+          "capacity": 1,
+          "occupants": [8],
+          "coordinates": {
+            "x": 150,
+            "y": 150,
+            "width": 100,
+            "height": 80
+          }
+        },
+        {
+          "id": "A101",
+          "name": "Bureau de l'Administrateur Système",
+          "type": "office",
+          "area": "A",
+          "capacity": 1,
+          "occupants": [1],
+          "coordinates": {
+            "x": 270,
+            "y": 150,
+            "width": 80,
+            "height": 80
+          }
+        },
+        {
+          "id": "A102",
+          "name": "Salle de réunion Direction",
+          "type": "meeting",
+          "area": "A",
+          "capacity": 10,
+          "occupants": [],
+          "coordinates": {
+            "x": 150,
+            "y": 250,
+            "width": 200,
+            "height": 80
+          }
+        },
+        {
+          "id": "E101",
+          "name": "Bureau du Directeur Financier",
+          "type": "office",
+          "area": "E",
+          "capacity": 1,
+          "occupants": [10],
+          "coordinates": {
+            "x": 500,
+            "y": 150,
+            "width": 100,
+            "height": 80
+          }
+        },
+        {
+          "id": "E105",
+          "name": "Bureau Comptabilité",
+          "type": "office",
+          "area": "E",
+          "capacity": 2,
+          "occupants": [9],
+          "coordinates": {
+            "x": 620,
+            "y": 150,
+            "width": 100,
+            "height": 80
+          }
+        },
+        {
+          "id": "G101",
+          "name": "Bureau Logistique",
+          "type": "office",
+          "area": "G",
+          "capacity": 4,
+          "occupants": [],
+          "coordinates": {
+            "x": 850,
+            "y": 150,
+            "width": 200,
+            "height": 80
+          }
+        },
+        {
+          "id": "common101",
+          "name": "Cafétéria",
+          "type": "common",
+          "area": "common1",
+          "capacity": 30,
+          "occupants": [],
+          "coordinates": {
+            "x": 150,
+            "y": 450,
+            "width": 250,
+            "height": 200
+          }
+        },
+        {
+          "id": "common102",
+          "name": "Accueil",
+          "type": "common",
+          "area": "common1",
+          "capacity": 5,
+          "occupants": [],
+          "coordinates": {
+            "x": 500,
+            "y": 450,
+            "width": 150,
+            "height": 100
+          }
+        },
+        {
+          "id": "common103",
+          "name": "Salle de conférence principale",
+          "type": "meeting",
+          "area": "common1",
+          "capacity": 50,
+          "occupants": [],
+          "coordinates": {
+            "x": 700,
+            "y": 450,
+            "width": 300,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Étage 2",
+      "description": "Premier étage - Marketing et Commercial",
+      "map": {
+        "width": 1200,
+        "height": 800,
+        "background": "maps/floor2.png",
+        "areas": [
+          {
+            "id": "B",
+            "name": "Aile B - Marketing",
+            "color": "#3498db",
+            "coordinates": {
+              "x": 100,
+              "y": 100,
+              "width": 450,
+              "height": 250
+            }
+          },
+          {
+            "id": "F",
+            "name": "Aile F - Commercial",
+            "color": "#9b59b6",
+            "coordinates": {
+              "x": 650,
+              "y": 100,
+              "width": 450,
+              "height": 250
+            }
+          },
+          {
+            "id": "common2",
+            "name": "Espaces communs",
+            "color": "#95a5a6",
+            "coordinates": {
+              "x": 100,
+              "y": 400,
+              "width": 1000,
+              "height": 300
+            }
+          }
+        ]
+      },
+      "rooms": [
+        {
+          "id": "B201",
+          "name": "Bureau de la Directrice Marketing",
+          "type": "office",
+          "area": "B",
+          "capacity": 1,
+          "occupants": [5],
+          "coordinates": {
+            "x": 150,
+            "y": 150,
+            "width": 100,
+            "height": 80
+          }
+        },
+        {
+          "id": "B205",
+          "name": "Bureau Marketing Digital",
+          "type": "office",
+          "area": "B",
+          "capacity": 3,
+          "occupants": [2],
+          "coordinates": {
+            "x": 270,
+            "y": 150,
+            "width": 150,
+            "height": 80
+          }
+        },
+        {
+          "id": "B210",
+          "name": "Salle créative",
+          "type": "meeting",
+          "area": "B",
+          "capacity": 8,
+          "occupants": [],
+          "coordinates": {
+            "x": 150,
+            "y": 250,
+            "width": 200,
+            "height": 80
+          }
+        },
+        {
+          "id": "F201",
+          "name": "Bureau du Directeur Commercial",
+          "type": "office",
+          "area": "F",
+          "capacity": 1,
+          "occupants": [],
+          "coordinates": {
+            "x": 700,
+            "y": 150,
+            "width": 100,
+            "height": 80
+          }
+        },
+        {
+          "id": "F205",
+          "name": "Espace Ventes",
+          "type": "open",
+          "area": "F",
+          "capacity": 8,
+          "occupants": [],
+          "coordinates": {
+            "x": 820,
+            "y": 150,
+            "width": 200,
+            "height": 150
+          }
+        },
+        {
+          "id": "common201",
+          "name": "Espace détente",
+          "type": "common",
+          "area": "common2",
+          "capacity": 15,
+          "occupants": [],
+          "coordinates": {
+            "x": 150,
+            "y": 450,
+            "width": 200,
+            "height": 150
+          }
+        },
+        {
+          "id": "common202",
+          "name": "Salles de réunion",
+          "type": "meeting",
+          "area": "common2",
+          "capacity": 20,
+          "occupants": [],
+          "coordinates": {
+            "x": 400,
+            "y": 450,
+            "width": 400,
+            "height": 150
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Étage 3",
+      "description": "Deuxième étage - Ressources Humaines",
+      "map": {
+        "width": 1200,
+        "height": 800,
+        "background": "maps/floor3.png",
+        "areas": [
+          {
+            "id": "C",
+            "name": "Aile C - Ressources Humaines",
+            "color": "#e74c3c",
+            "coordinates": {
+              "x": 100,
+              "y": 100,
+              "width": 1000,
+              "height": 250
+            }
+          },
+          {
+            "id": "common3",
+            "name": "Espaces communs",
+            "color": "#95a5a6",
+            "coordinates": {
+              "x": 100,
+              "y": 400,
+              "width": 1000,
+              "height": 300
+            }
+          }
+        ]
+      },
+      "rooms": [
+        {
+          "id": "C301",
+          "name": "Bureau du Directeur RH",
+          "type": "office",
+          "area": "C",
+          "capacity": 1,
+          "occupants": [6],
+          "coordinates": {
+            "x": 150,
+            "y": 150,
+            "width": 100,
+            "height": 80
+          }
+        },
+        {
+          "id": "C310",
+          "name": "Bureau Recrutement",
+          "type": "office",
+          "area": "C",
+          "capacity": 3,
+          "occupants": [3],
+          "coordinates": {
+            "x": 270,
+            "y": 150,
+            "width": 150,
+            "height": 80
+          }
+        },
+        {
+          "id": "C315",
+          "name": "Espace Formation",
+          "type": "training",
+          "area": "C",
+          "capacity": 15,
+          "occupants": [],
+          "coordinates": {
+            "x": 450,
+            "y": 150,
+            "width": 250,
+            "height": 150
+          }
+        },
+        {
+          "id": "C320",
+          "name": "Salle d'entretien 1",
+          "type": "meeting",
+          "area": "C",
+          "capacity": 4,
+          "occupants": [],
+          "coordinates": {
+            "x": 750,
+            "y": 150,
+            "width": 100,
+            "height": 80
+          }
+        },
+        {
+          "id": "C321",
+          "name": "Salle d'entretien 2",
+          "type": "meeting",
+          "area": "C",
+          "capacity": 4,
+          "occupants": [],
+          "coordinates": {
+            "x": 870,
+            "y": 150,
+            "width": 100,
+            "height": 80
+          }
+        },
+        {
+          "id": "common301",
+          "name": "Salle de formation",
+          "type": "training",
+          "area": "common3",
+          "capacity": 20,
+          "occupants": [],
+          "coordinates": {
+            "x": 150,
+            "y": 450,
+            "width": 300,
+            "height": 200
+          }
+        },
+        {
+          "id": "common302",
+          "name": "Bibliothèque",
+          "type": "common",
+          "area": "common3",
+          "capacity": 10,
+          "occupants": [],
+          "coordinates": {
+            "x": 500,
+            "y": 450,
+            "width": 200,
+            "height": 150
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Étage 4",
+      "description": "Troisième étage - Technique",
+      "map": {
+        "width": 1200,
+        "height": 800,
+        "background": "maps/floor4.png",
+        "areas": [
+          {
+            "id": "D",
+            "name": "Aile D - Technique",
+            "color": "#2ecc71",
+            "coordinates": {
+              "x": 100,
+              "y": 100,
+              "width": 1000,
+              "height": 250
+            }
+          },
+          {
+            "id": "common4",
+            "name": "Espaces communs",
+            "color": "#95a5a6",
+            "coordinates": {
+              "x": 100,
+              "y": 400,
+              "width": 1000,
+              "height": 300
+            }
+          }
+        ]
+      },
+      "rooms": [
+        {
+          "id": "D401",
+          "name": "Bureau de la Directrice Technique",
+          "type": "office",
+          "area": "D",
+          "capacity": 1,
+          "occupants": [7],
+          "coordinates": {
+            "x": 150,
+            "y": 150,
+            "width": 100,
+            "height": 80
+          }
+        },
+        {
+          "id": "D405",
+          "name": "Bureau Développement",
+          "type": "office",
+          "area": "D",
+          "capacity": 4,
+          "occupants": [4],
+          "coordinates": {
+            "x": 270,
+            "y": 150,
+            "width": 200,
+            "height": 80
+          }
+        },
+        {
+          "id": "D410",
+          "name": "Laboratoire R&D",
+          "type": "lab",
+          "area": "D",
+          "capacity": 8,
+          "occupants": [],
+          "coordinates": {
+            "x": 500,
+            "y": 150,
+            "width": 250,
+            "height": 150
+          }
+        },
+        {
+          "id": "D415",
+          "name": "Salle Serveurs",
+          "type": "server",
+          "area": "D",
+          "capacity": 0,
+          "occupants": [],
+          "coordinates": {
+            "x": 800,
+            "y": 150,
+            "width": 150,
+            "height": 100
+          }
+        },
+        {
+          "id": "common401",
+          "name": "Espace détente développeurs",
+          "type": "common",
+          "area": "common4",
+          "capacity": 15,
+          "occupants": [],
+          "coordinates": {
+            "x": 150,
+            "y": 450,
+            "width": 200,
+            "height": 150
+          }
+        },
+        {
+          "id": "common402",
+          "name": "Salle de réunion technique",
+          "type": "meeting",
+          "area": "common4",
+          "capacity": 12,
+          "occupants": [],
+          "coordinates": {
+            "x": 400,
+            "y": 450,
+            "width": 250,
+            "height": 150
+          }
+        }
+      ]
+    }
+  ],
+  "roomTypes": [
+    {
+      "id": "office",
+      "name": "Bureau",
+      "color": "#3498db",
+      "icon": "desk"
+    },
+    {
+      "id": "meeting",
+      "name": "Salle de réunion",
+      "color": "#e74c3c",
+      "icon": "users"
+    },
+    {
+      "id": "common",
+      "name": "Espace commun",
+      "color": "#95a5a6",
+      "icon": "coffee"
+    },
+    {
+      "id": "training",
+      "name": "Salle de formation",
+      "color": "#9b59b6",
+      "icon": "chalkboard-teacher"
+    },
+    {
+      "id": "lab",
+      "name": "Laboratoire",
+      "color": "#2ecc71",
+      "icon": "flask"
+    },
+    {
+      "id": "server",
+      "name": "Salle serveurs",
+      "color": "#f39c12",
+      "icon": "server"
+    },
+    {
+      "id": "open",
+      "name": "Open space",
+      "color": "#1abc9c",
+      "icon": "building"
+    }
+  ]
+}

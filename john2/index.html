@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solutions professionnelles en toile pour l'industrie maritime, événementielle et sportive. Protections de bateaux, stades et structures modulaires.">
+    <title>TextileMarine - Solutions professionnelles en toile</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header avec navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.svg" alt="TextileMarine Logo">
+                <span>TextileMarine</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">Notre entreprise</a></li>
+                    <li><a href="#products">Solutions</a></li>
+                    <li><a href="#projects">Réalisations</a></li>
+                    <li><a href="#testimonials">Témoignages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="intranet/index.html" class="btn btn-secondary">Intranet</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop id="hero-video">
+                <source src="images/hero-video.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+                <img src="images/hero-fallback.jpg" alt="Chantier naval avec protections textiles">
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="reveal-text">Protégez l'excellence, façonnez l'avenir avec nos solutions en toile</h1>
+            <p class="reveal-text delay-1">Solutions textiles industrielles sur mesure pour les secteurs maritime, sportif et événementiel</p>
+            <div class="cta-buttons reveal-text delay-2">
+                <a href="#products" class="btn btn-primary">Découvrir nos solutions</a>
+                <a href="intranet/index.html" class="btn btn-secondary">Accéder à l'Intranet</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Découvrir</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre entreprise</h2>
+                <p class="section-subtitle">Excellence et innovation depuis 1985</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image parallax-element">
+                    <img src="images/about-company.jpg" alt="Atelier de fabrication TextileMarine">
+                </div>
+                <div class="about-text">
+                    <h3 class="reveal-on-scroll">Notre histoire</h3>
+                    <p class="reveal-on-scroll">Fondée en 1985 à Saint-Nazaire, TextileMarine s'est imposée comme un leader dans la conception et la fabrication de solutions textiles industrielles. Notre expertise s'est forgée au contact des grands chantiers navals, nous permettant de développer un savoir-faire unique dans la protection d'équipements de haute valeur.</p>
+                    
+                    <h3 class="reveal-on-scroll">Nos valeurs</h3>
+                    <div class="values-grid reveal-on-scroll">
+                        <div class="value-item">
+                            <i class="fas fa-medal"></i>
+                            <h4>Excellence</h4>
+                            <p>Nous visons l'excellence dans chaque projet, du plus petit au plus ambitieux.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Innovation</h4>
+                            <p>Nous repoussons constamment les limites des matériaux et des techniques.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Engagement</h4>
+                            <p>Nous nous engageons pleinement dans chaque projet client.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Durabilité</h4>
+                            <p>Nous concevons des solutions durables et respectueuses de l'environnement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="partners-section reveal-on-scroll">
+                <h3>Ils nous font confiance</h3>
+                <div class="partners-logos">
+                    <div class="partner"><img src="images/partner1.png" alt="Chantiers de l'Atlantique"></div>
+                    <div class="partner"><img src="images/partner2.png" alt="Naval Group"></div>
+                    <div class="partner"><img src="images/partner3.png" alt="Stade de France"></div>
+                    <div class="partner"><img src="images/partner4.png" alt="Bénéteau"></div>
+                    <div class="partner"><img src="images/partner5.png" alt="GL Events"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos solutions</h2>
+                <p class="section-subtitle">Des solutions textiles adaptées à vos besoins spécifiques</p>
+            </div>
+            
+            <div class="product-filters reveal-on-scroll">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="maritime">Maritime</button>
+                <button class="filter-btn" data-filter="sport">Sport</button>
+                <button class="filter-btn" data-filter="event">Événementiel</button>
+                <button class="filter-btn" data-filter="industrial">Industriel</button>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card reveal-on-scroll" data-category="maritime">
+                    <div class="product-image">
+                        <img src="images/product-maritime1.jpg" alt="Protection de bateau">
+                    </div>
+                    <div class="product-info">
+                        <h3>Protections de bateaux</h3>
+                        <p>Solutions de protection sur mesure pour tous types de navires, du voilier de plaisance au paquebot.</p>
+                        <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                    </div>
+                </div>
+                
+                <div class="product-card reveal-on-scroll" data-category="maritime">
+                    <div class="product-image">
+                        <img src="images/product-maritime2.jpg" alt="Bâches de chantier naval">
+                    </div>
+                    <div class="product-info">
+                        <h3>Bâches de chantier naval</h3>
+                        <p>Protections temporaires pour les zones de travail en chantier naval, résistantes aux conditions extrêmes.</p>
+                        <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                    </div>
+                </div>
+                
+                <div class="product-card reveal-on-scroll" data-category="sport">
+                    <div class="product-image">
+                        <img src="images/product-sport1.jpg" alt="Couvertures de stades">
+                    </div>
+                    <div class="product-info">
+                        <h3>Couvertures de stades</h3>
+                        <p>Solutions textiles pour la protection et la couverture partielle ou totale d'infrastructures sportives.</p>
+                        <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                    </div>
+                </div>
+                
+                <div class="product-card reveal-on-scroll" data-category="event">
+                    <div class="product-image">
+                        <img src="images/product-event1.jpg" alt="Structures modulaires">
+                    </div>
+                    <div class="product-info">
+                        <h3>Structures modulaires</h3>
+                        <p>Structures textiles modulables pour événements, expositions et installations temporaires.</p>
+                        <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                    </div>
+                </div>
+                
+                <div class="product-card reveal-on-scroll" data-category="industrial">
+                    <div class="product-image">
+                        <img src="images/product-industrial1.jpg" alt="Protections industrielles">
+                    </div>
+                    <div class="product-info">
+                        <h3>Protections industrielles</h3>
+                        <p>Solutions de protection pour équipements industriels sensibles et zones de production.</p>
+                        <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                    </div>
+                </div>
+                
+                <div class="product-card reveal-on-scroll" data-category="event">
+                    <div class="product-image">
+                        <img src="images/product-event2.jpg" alt="Tentes événementielles">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tentes événementielles</h3>
+                        <p>Structures textiles personnalisées pour événements professionnels et grand public.</p>
+                        <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos réalisations</h2>
+                <p class="section-subtitle">Découvrez nos projets les plus emblématiques</p>
+            </div>
+            
+            <div class="projects-gallery">
+                <div class="project-item reveal-on-scroll" data-category="maritime">
+                    <div class="project-image">
+                        <img src="images/project1.jpg" alt="Protection du Queen Mary 2">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Protection du Queen Mary 2</h3>
+                                <p>Protection complète lors de la rénovation aux Chantiers de l'Atlantique</p>
+                                <a href="#" class="btn btn-light project-details-btn" data-project="project1">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item reveal-on-scroll" data-category="sport">
+                    <div class="project-image">
+                        <img src="images/project2.jpg" alt="Couverture du Stade Océane">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Couverture du Stade Océane</h3>
+                                <p>Installation d'une couverture textile innovante pour le stade du Havre</p>
+                                <a href="#" class="btn btn-light project-details-btn" data-project="project2">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item reveal-on-scroll" data-category="event">
+                    <div class="project-image">
+                        <img src="images/project3.jpg" alt="Festival Les Escales">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Festival Les Escales</h3>
+                                <p>Conception et installation de structures textiles pour le festival de Saint-Nazaire</p>
+                                <a href="#" class="btn btn-light project-details-btn" data-project="project3">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item reveal-on-scroll" data-category="industrial">
+                    <div class="project-image">
+                        <img src="images/project4.jpg" alt="Protection d'éoliennes offshore">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Protection d'éoliennes offshore</h3>
+                                <p>Développement de housses de protection pour le parc éolien de Saint-Nazaire</p>
+                                <a href="#" class="btn btn-light project-details-btn" data-project="project4">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item reveal-on-scroll" data-category="maritime">
+                    <div class="project-image">
+                        <img src="images/project5.jpg" alt="Chantier Naval de Lorient">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Chantier Naval de Lorient</h3>
+                                <p>Installation de bâches de protection pour la construction de frégates</p>
+                                <a href="#" class="btn btn-light project-details-btn" data-project="project5">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-item reveal-on-scroll" data-category="event">
+                    <div class="project-image">
+                        <img src="images/project6.jpg" alt="Exposition La Mer XXL">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>Exposition La Mer XXL</h3>
+                                <p>Création d'espaces d'exposition textiles pour l'événement à Nantes</p>
+                                <a href="#" class="btn btn-light project-details-btn" data-project="project6">Voir détails</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Details Modal -->
+            <div class="modal" id="project-modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="project-details-content">
+                        <!-- Content will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Témoignages</h2>
+                <p class="section-subtitle">Ce que nos clients disent de nous</p>
+            </div>
+            
+            <div class="testimonials-carousel reveal-on-scroll">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>TextileMarine a su répondre parfaitement à nos exigences techniques pour la protection de nos navires en construction. Leur expertise et leur réactivité ont été déterminantes dans la réussite de notre projet.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial1.jpg" alt="Jean Dupont">
+                            <div class="author-info">
+                                <h4>Jean Dupont</h4>
+                                <p>Directeur de projet, Chantiers de l'Atlantique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>La qualité des matériaux et la précision des finitions font de TextileMarine un partenaire de choix pour nos installations sportives. Leur solution de couverture a transformé notre stade.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial2.jpg" alt="Marie Laurent">
+                            <div class="author-info">
+                                <h4>Marie Laurent</h4>
+                                <p>Responsable infrastructures, Stade Océane</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Pour notre festival annuel, TextileMarine nous a proposé des structures modulaires innovantes qui ont impressionné nos visiteurs. Un travail remarquable réalisé dans des délais serrés.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial3.jpg" alt="Pierre Moreau">
+                            <div class="author-info">
+                                <h4>Pierre Moreau</h4>
+                                <p>Directeur, Festival Les Escales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Discutons de votre projet</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info reveal-on-scroll">
+                    <h3>Nos coordonnées</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>123 Boulevard des Chantiers<br>44600 Saint-Nazaire, France</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>+33 2 40 XX XX XX</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@textilemarine.fr</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horaires</h4>
+                            <p>Lundi - Vendredi: 8h30 - 18h00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-map-form reveal-on-scroll">
+                    <div class="factory-map">
+                        <h3>Notre site de production</h3>
+                        <div class="map-container" id="factory-map">
+                            <!-- Map will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Envoyez-nous un message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nom complet</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Sujet</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Sélectionnez un sujet</option>
+                                    <option value="devis">Demande de devis</option>
+                                    <option value="information">Demande d'information</option>
+                                    <option value="partnership">Proposition de partenariat</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group form-checkbox">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent">J'accepte que mes données soient traitées pour répondre à ma demande</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-white.svg" alt="TextileMarine Logo">
+                    <p>Solutions textiles industrielles sur mesure depuis 1985</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#about">Notre entreprise</a></li>
+                            <li><a href="#products">Solutions</a></li>
+                            <li><a href="#projects">Réalisations</a></li>
+                            <li><a href="#testimonials">Témoignages</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="#products">Maritime</a></li>
+                            <li><a href="#products">Sport</a></li>
+                            <li><a href="#products">Événementiel</a></li>
+                            <li><a href="#products">Industriel</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Légal</h4>
+                        <ul>
+                            <li><a href="#">Mentions légales</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
+                            <li><a href="#">CGV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TextileMarine. Tous droits réservés.</p>
+                <a href="intranet/index.html" class="intranet-link">Accès Intranet</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Retour en haut"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

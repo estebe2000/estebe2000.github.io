@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur d'images placeholder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #3498db;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .preview-item {
+            text-align: center;
+        }
+        .preview-item img {
+            max-width: 150px;
+            border: 1px solid #ddd;
+        }
+        .preview-item p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .instructions {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .success {
+            color: #2ecc71;
+        }
+        .error {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Générateur d'images placeholder</h1>
+    
+    <div class="instructions">
+        <h3>Instructions :</h3>
+        <ol>
+            <li>Cliquez sur les boutons ci-dessous pour générer les différentes catégories d'images.</li>
+            <li>Les images générées s'afficheront en aperçu sur cette page.</li>
+            <li>Cliquez avec le bouton droit sur chaque image et sélectionnez "Enregistrer l'image sous..."</li>
+            <li>Enregistrez l'image dans le dossier approprié selon son nom.</li>
+        </ol>
+    </div>
+    
+    <div class="section">
+        <h2>Images de jeux</h2>
+        <p>Ces images doivent être enregistrées dans le dossier <code>images/games/</code></p>
+        <button id="generate-games">Générer les images de jeux</button>
+        <div class="status" id="games-status"></div>
+        <div class="preview" id="games-preview"></div>
+    </div>
+    
+    <div class="section">
+        <h2>Images QR</h2>
+        <p>L'image QR exemple doit être enregistrée dans le dossier <code>images/</code><br>
+        Les autres images QR doivent être enregistrées dans le dossier <code>images/qr-codes/</code></p>
+        <button id="generate-qr">Générer les images QR</button>
+        <div class="status" id="qr-status"></div>
+        <div class="preview" id="qr-preview"></div>
+    </div>
+    
+    <div class="section">
+        <h2>Images d'archives</h2>
+        <p>Ces images doivent être enregistrées dans les sous-dossiers appropriés de <code>images/archives/</code></p>
+        <button id="generate-archives-chronologie">Chronologie</button>
+        <button id="generate-archives-batiments">Bâtiments</button>
+        <button id="generate-archives-classes">Classes</button>
+        <button id="generate-archives-evenements">Événements</button>
+        <button id="generate-archives-personnalites">Personnalités</button>
+        <button id="generate-archives-documents">Documents</button>
+        <div class="status" id="archives-status"></div>
+        <div class="preview" id="archives-preview"></div>
+    </div>
+    
+    <script>
+        // Configuration
+        const gameImages = [
+            { name: 'puzzle.jpg', title: 'Puzzle Historique', color: '#3498db' },
+            { name: 'quiz.jpg', title: 'Quiz de Connaissances', color: '#e74c3c' },
+            { name: 'memory.jpg', title: 'Memory des Symboles', color: '#2ecc71' },
+            { name: 'wordsearch.jpg', title: 'Mots Mêlés', color: '#f39c12' },
+            { name: 'hangman.jpg', title: 'Le Pendu', color: '#9b59b6' },
+            { name: 'riddle.jpg', title: 'Énigmes Logiques', color: '#1abc9c' }
+        ];
+        
+        const qrImages = [
+            { name: 'qr-example.png', title: 'QR Code Exemple', path: 'images/' },
+            { name: 'puzzle.png', title: 'Puzzle QR', path: 'images/qr-codes/' },
+            { name: 'quiz.png', title: 'Quiz QR', path: 'images/qr-codes/' },
+            { name: 'memory.png', title: 'Memory QR', path: 'images/qr-codes/' },
+            { name: 'wordsearch.png', title: 'Wordsearch QR', path: 'images/qr-codes/' },
+            { name: 'hangman.png', title: 'Hangman QR', path: 'images/qr-codes/' },
+            { name: 'riddle.png', title: 'Riddle QR', path: 'images/qr-codes/' }
+        ];
+        
+        const archiveCategories = {
+            chronologie: [
+                { name: 'lycee-1960.jpg', title: 'Lycée en 1960' },
+                { name: 'lycee-1970.jpg', title: 'Lycée en 1970' },
+                { name: 'labo-1985.jpg', title: 'Laboratoire en 1985' },
+                { name: 'info-1995.jpg', title: 'Salle info en 1995' },
+                { name: 'renovation-2005.jpg', title: 'Rénovation en 2005' },
+                { name: 'multimedia-2015.jpg', title: 'Centre multimédia en 2015' },
+                { name: 'lycee-2025.jpg', title: 'Lycée en 2025' }
+            ],
+            batiments: [
+                { name: 'facade-principale.jpg', title: 'Façade principale' },
+                { name: 'cour-interieure.jpg', title: 'Cour intérieure' },
+                { name: 'gymnase.jpg', title: 'Gymnase' },
+                { name: 'cdi-ancien.jpg', title: 'Ancien CDI' }
+            ],
+            classes: [
+                { name: 'classe-physique.jpg', title: 'Cours de physique' },
+                { name: 'classe-lettres.jpg', title: 'Cours de lettres' },
+                { name: 'classe-info.jpg', title: 'Cours d\'informatique' },
+                { name: 'classe-art.jpg', title: 'Atelier d\'arts plastiques' }
+            ],
+            evenements: [
+                { name: 'remise-diplomes-1980.jpg', title: 'Remise de diplômes' },
+                { name: 'spectacle-1990.jpg', title: 'Spectacle de fin d\'année' },
+                { name: 'competition-sportive.jpg', title: 'Compétition sportive' },
+                { name: 'journee-portes-ouvertes.jpg', title: 'Journée portes ouvertes' }
+            ],
+            personnalites: [
+                { name: 'proviseur-1965.jpg', title: 'Premier proviseur' },
+                { name: 'visite-ministre.jpg', title: 'Visite ministérielle' },
+                { name: 'equipe-enseignante-1980.jpg', title: 'Équipe enseignante' },
+                { name: 'anciens-eleves.jpg', title: 'Anciens élèves' }
+            ],
+            documents: [
+                { name: 'plan-original.jpg', title: 'Plan original' },
+                { name: 'journal-inauguration.jpg', title: 'Journal d\'inauguration' },
+                { name: 'lettre-fondation.jpg', title: 'Lettre de fondation' },
+                { name: 'premier-reglement.jpg', title: 'Premier règlement' }
+            ]
+        };
+        
+        // Couleurs par catégorie
+        const categoryColors = {
+            chronologie: '#3498db',
+            batiments: '#e74c3c',
+            classes: '#2ecc71',
+            evenements: '#f39c12',
+            personnalites: '#9b59b6',
+            documents: '#1abc9c'
+        };
+        
+        // Fonction pour générer une image de jeu
+        function generateGameImage(game) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 300;
+            const ctx = canvas.getContext('2d');
+            
+            // Fond coloré
+            ctx.fillStyle = game.color;
+            ctx.fillRect(0, 0, 400, 300);
+            
+            // Motif
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            for (let i = 0; i < 10; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const size = Math.random() * 50 + 20;
+                ctx.beginPath();
+                ctx.arc(x, y, size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            // Texte
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(game.title, 200, 150);
+            ctx.font = '18px Arial';
+            ctx.fillText('Placeholder Image', 200, 180);
+            
+            return canvas.toDataURL('image/jpeg');
+        }
+        
+        // Fonction pour générer une image QR
+        function generateQRImage(qr) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 200;
+            canvas.height = 200;
+            const ctx = canvas.getContext('2d');
+            
+            // Fond blanc
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, 200, 200);
+            
+            // Cadre noir
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 5;
+            ctx.strokeRect(10, 10, 180, 180);
+            
+            // Carrés de positionnement QR
+            ctx.fillStyle = 'black';
+            // Coin supérieur gauche
+            ctx.fillRect(30, 30, 40, 40);
+            ctx.fillStyle = 'white';
+            ctx.fillRect(40, 40, 20, 20);
+            ctx.fillStyle = 'black';
+            ctx.fillRect(45, 45, 10, 10);
+            
+            // Coin supérieur droit
+            ctx.fillStyle = 'black';
+            ctx.fillRect(130, 30, 40, 40);
+            ctx.fillStyle = 'white';
+            ctx.fillRect(140, 40, 20, 20);
+            ctx.fillStyle = 'black';
+            ctx.fillRect(145, 45, 10, 10);
+            
+            // Coin inférieur gauche
+            ctx.fillStyle = 'black';
+            ctx.fillRect(30, 130, 40, 40);
+            ctx.fillStyle = 'white';
+            ctx.fillRect(40, 140, 20, 20);
+            ctx.fillStyle = 'black';
+            ctx.fillRect(45, 145, 10, 10);
+            
+            // Points aléatoires
+            ctx.fillStyle = 'black';
+            for (let i = 0; i < 100; i++) {
+                const x = Math.random() * 120 + 40;
+                const y = Math.random() * 120 + 40;
+                const size = Math.random() * 5 + 2;
+                ctx.fillRect(x, y, size, size);
+            }
+            
+            // Texte
+            ctx.fillStyle = 'black';
+            ctx.font = '10px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(qr.title, 100, 190);
+            
+            return canvas.toDataURL('image/png');
+        }
+        
+        // Fonction pour générer une image d'archive
+        function generateArchiveImage(image, category) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 300;
+            const ctx = canvas.getContext('2d');
+            
+            // Fond coloré
+            ctx.fillStyle = categoryColors[category];
+            ctx.fillRect(0, 0, 400, 300);
+            
+            // Effet de vieille photo
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.fillRect(0, 0, 400, 300);
+            
+            // Bordure
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+            ctx.lineWidth = 10;
+            ctx.strokeRect(10, 10, 380, 280);
+            
+            // Texte
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(image.title, 200, 150);
+            ctx.font = '18px Arial';
+            ctx.fillText(`Catégorie: ${category}`, 200, 180);
+            ctx.font = '16px Arial';
+            ctx.fillText('Placeholder Image', 200, 210);
+            
+            return canvas.toDataURL('image/jpeg');
+        }
+        
+        // Fonction pour ajouter un aperçu d'image
+        function addImagePreview(container, dataUrl, name, path) {
+            const previewItem = document.createElement('div');
+            previewItem.className = 'preview-item';
+            
+            const img = document.createElement('img');
+            img.src = dataUrl;
+            img.alt = name;
+            
+            const nameText = document.createElement('p');
+            nameText.textContent = name;
+            
+            const pathText = document.createElement('p');
+            pathText.textContent = path || '';
+            pathText.style.fontSize = '12px';
+            pathText.style.color = '#666';
+            
+            previewItem.appendChild(img);
+            previewItem.appendChild(nameText);
+            if (path) previewItem.appendChild(pathText);
+            
+            container.appendChild(previewItem);
+        }
+        
+        // Gestionnaire d'événement pour générer les images de jeux
+        document.getElementById('generate-games').addEventListener('click', function() {
+            const previewContainer = document.getElementById('games-preview');
+            const statusContainer = document.getElementById('games-status');
+            
+            // Vider le conteneur d'aperçu
+            previewContainer.innerHTML = '';
+            
+            try {
+                // Générer les images de jeux
+                gameImages.forEach(game => {
+                    const dataUrl = generateGameImage(game);
+                    addImagePreview(previewContainer, dataUrl, game.name, 'images/games/');
+                });
+                
+                statusContainer.innerHTML = '<p class="success">Images de jeux générées avec succès! Cliquez avec le bouton droit sur chaque image et sélectionnez "Enregistrer l\'image sous..." pour les sauvegarder.</p>';
+            } catch (error) {
+                statusContainer.innerHTML = `<p class="error">Erreur lors de la génération des images de jeux: ${error.message}</p>`;
+            }
+        });
+        
+        // Gestionnaire d'événement pour générer les images QR
+        document.getElementById('generate-qr').addEventListener('click', function() {
+            const previewContainer = document.getElementById('qr-preview');
+            const statusContainer = document.getElementById('qr-status');
+            
+            // Vider le conteneur d'aperçu
+            previewContainer.innerHTML = '';
+            
+            try {
+                // Générer les images QR
+                qrImages.forEach(qr => {
+                    const dataUrl = generateQRImage(qr);
+                    addImagePreview(previewContainer, dataUrl, qr.name, qr.path);
+                });
+                
+                statusContainer.innerHTML = '<p class="success">Images QR générées avec succès! Cliquez avec le bouton droit sur chaque image et sélectionnez "Enregistrer l\'image sous..." pour les sauvegarder.</p>';
+            } catch (error) {
+                statusContainer.innerHTML = `<p class="error">Erreur lors de la génération des images QR: ${error.message}</p>`;
+            }
+        });
+        
+        // Gestionnaires d'événements pour générer les images d'archives
+        Object.keys(archiveCategories).forEach(category => {
+            document.getElementById(`generate-archives-${category}`).addEventListener('click', function() {
+                const previewContainer = document.getElementById('archives-preview');
+                const statusContainer = document.getElementById('archives-status');
+                
+                // Vider le conteneur d'aperçu
+                previewContainer.innerHTML = '';
+                
+                try {
+                    // Générer les images d'archives pour cette catégorie
+                    archiveCategories[category].forEach(image => {
+                        const dataUrl = generateArchiveImage(image, category);
+                        addImagePreview(previewContainer, dataUrl, image.name, `images/archives/${category}/`);
+                    });
+                    
+                    statusContainer.innerHTML = `<p class="success">Images d'archives de la catégorie "${category}" générées avec succès! Cliquez avec le bouton droit sur chaque image et sélectionnez "Enregistrer l\'image sous..." pour les sauvegarder.</p>`;
+                } catch (error) {
+                    statusContainer.innerHTML = `<p class="error">Erreur lors de la génération des images d'archives: ${error.message}</p>`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

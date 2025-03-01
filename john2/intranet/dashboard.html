@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextileMarine - Tableau de bord</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../intranet/css/intranet-styles.css">
+    <link rel="stylesheet" href="../intranet/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="intranet-body">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="../images/logo.svg" alt="TextileMarine Logo">
+                <span>TextileMarine</span>
+            </div>
+            <button class="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Tableau de bord</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="employees.html">
+                        <i class="fas fa-users"></i>
+                        <span>Employés</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Projets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="production.html">
+                        <i class="fas fa-industry"></i>
+                        <span>Production</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inventory.html">
+                        <i class="fas fa-boxes"></i>
+                        <span>Inventaire</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="factory-map.html">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Plan des locaux</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="leave-management.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Congés</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="documents.html">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Documents</span>
+                    </a>
+                </li>
+                <li class="sidebar-divider"></li>
+                <li>
+                    <a href="settings.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Paramètres</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Déconnexion</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </div>
+            <a href="../index.html" class="public-site-link" title="Voir le site public">
+                <i class="fas fa-globe"></i>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="intranet-header">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Rechercher...">
+            </div>
+            
+            <div class="header-actions">
+                <div class="notifications">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="notification-dropdown">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <a href="#" class="mark-all-read">Tout marquer comme lu</a>
+                        </div>
+                        <ul class="notification-list">
+                            <li class="notification-item unread">
+                                <div class="notification-icon project">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Nouveau projet assigné: <strong>Protection Navire MSC</strong></p>
+                                    <span class="notification-time">Il y a 30 minutes</span>
+                                </div>
+                                <button class="notification-action">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </li>
+                            <li class="notification-item unread">
+                                <div class="notification-icon document">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Document mis à jour: <strong>Plan de production Q2</strong></p>
+                                    <span class="notification-time">Il y a 2 heures</span>
+                                </div>
+                                <button class="notification-action">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </li>
+                            <li class="notification-item unread">
+                                <div class="notification-icon leave">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Demande de congés <strong>approuvée</strong> (15-20 avril)</p>
+                                    <span class="notification-time">Il y a 1 jour</span>
+                                </div>
+                                <button class="notification-action">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon inventory">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Alerte stock: <strong>Toile marine T-450</strong> en quantité faible</p>
+                                    <span class="notification-time">Il y a 2 jours</span>
+                                </div>
+                                <button class="notification-action">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="notification-footer">
+                            <a href="notifications.html">Voir toutes les notifications</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="messages">
+                    <button class="message-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span class="message-badge">2</span>
+                    </button>
+                </div>
+                
+                <div class="user-profile">
+                    <button class="profile-btn">
+                        <img src="../images/profile-placeholder.jpg" alt="Photo de profil" id="user-avatar">
+                        <span id="user-name">Thomas Martin</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="profile-dropdown">
+                        <ul>
+                            <li>
+                                <a href="profile.html">
+                                    <i class="fas fa-user"></i>
+                                    <span>Mon profil</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="settings.html">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Paramètres</span>
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li>
+                                <a href="#" id="profile-logout-btn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Déconnexion</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Dashboard Content -->
+        <div class="dashboard-container">
+            <div class="page-header">
+                <h1>Tableau de bord</h1>
+                <p class="welcome-message">Bienvenue, <span id="welcome-user-name">Thomas</span> ! <span id="welcome-date">Lundi 1 mars 2025</span></p>
+            </div>
+            
+            <!-- Quick Stats -->
+            <section class="dashboard-section quick-stats">
+                <div class="stat-card">
+                    <div class="stat-icon projects">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Projets actifs</h3>
+                        <p class="stat-value">12</p>
+                        <p class="stat-change positive">+2 ce mois</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon tasks">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Tâches assignées</h3>
+                        <p class="stat-value">8</p>
+                        <p class="stat-change negative">3 en retard</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon team">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Équipe disponible</h3>
+                        <p class="stat-value">24/28</p>
+                        <p class="stat-change neutral">4 absents</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon inventory">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Matériaux</h3>
+                        <p class="stat-value">92%</p>
+                        <p class="stat-change positive">Stock optimal</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Main Dashboard Widgets -->
+            <div class="dashboard-grid">
+                <!-- Current Projects -->
+                <section class="dashboard-widget projects-widget">
+                    <div class="widget-header">
+                        <h2>Projets en cours</h2>
+                        <div class="widget-actions">
+                            <button class="widget-action" title="Rafraîchir">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="widget-action" title="Plus d'options">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="widget-content">
+                        <div class="project-list">
+                            <div class="project-item">
+                                <div class="project-info">
+                                    <h3>Protection Queen Victoria</h3>
+                                    <p>Chantiers de l'Atlantique</p>
+                                    <div class="project-meta">
+                                        <span class="project-deadline">
+                                            <i class="fas fa-calendar"></i> Échéance: 15/04/2025
+                                        </span>
+                                        <span class="project-status in-progress">
+                                            <i class="fas fa-spinner"></i> En cours
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="project-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 65%"></div>
+                                    </div>
+                                    <span class="progress-value">65%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <div class="project-info">
+                                    <h3>Couverture Stade Brestois</h3>
+                                    <p>Brest Métropole</p>
+                                    <div class="project-meta">
+                                        <span class="project-deadline">
+                                            <i class="fas fa-calendar"></i> Échéance: 30/05/2025
+                                        </span>
+                                        <span class="project-status planning">
+                                            <i class="fas fa-clipboard-list"></i> Planification
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="project-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 20%"></div>
+                                    </div>
+                                    <span class="progress-value">20%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-item">
+                                <div class="project-info">
+                                    <h3>Structures Festival Hellfest</h3>
+                                    <p>Hellfest Productions</p>
+                                    <div class="project-meta">
+                                        <span class="project-deadline">
+                                            <i class="fas fa-calendar"></i> Échéance: 10/06/2025
+                                        </span>
+                                        <span class="project-status urgent">
+                                            <i class="fas fa-exclamation-circle"></i> Urgent
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="project-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 40%"></div>
+                                    </div>
+                                    <span class="progress-value">40%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="projects.html" class="widget-footer-link">
+                            <span>Voir tous les projets</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </section>
+                
+                <!-- Tasks Kanban -->
+                <section class="dashboard-widget tasks-widget">
+                    <div class="widget-header">
+                        <h2>Mes tâches</h2>
+                        <div class="widget-actions">
+                            <button class="widget-action" title="Ajouter une tâche">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="widget-action" title="Plus d'options">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="widget-content">
+                        <div class="kanban-board">
+                            <div class="kanban-column">
+                                <div class="column-header">
+                                    <h3>À faire</h3>
+                                    <span class="task-count">3</span>
+                                </div>
+                                
+                                <div class="task-list">
+                                    <div class="task-card">
+                                        <div class="task-priority high"></div>
+                                        <h4>Préparer devis Stade Brestois</h4>
+                                        <p>Finaliser l'estimation des matériaux nécessaires</p>
+                                        <div class="task-meta">
+                                            <span class="task-due-date">03/03/2025</span>
+                                            <span class="task-project">Stade Brestois</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="task-card">
+                                        <div class="task-priority medium"></div>
+                                        <h4>Commander toile T-450</h4>
+                                        <p>Renouveler le stock pour les projets à venir</p>
+                                        <div class="task-meta">
+                                            <span class="task-due-date">05/03/2025</span>
+                                            <span class="task-project">Inventaire</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="task-card">
+                                        <div class="task-priority low"></div>
+                                        <h4>Mise à jour documentation</h4>
+                                        <p>Actualiser les fiches techniques des produits</p>
+                                        <div class="task-meta">
+                                            <span class="task-due-date">10/03/2025</span>
+                                            <span class="task-project">Documentation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="kanban-column">
+                                <div class="column-header">
+                                    <h3>En cours</h3>
+                                    <span class="task-count">2</span>
+                                </div>
+                                
+                                <div class="task-list">
+                                    <div class="task-card">
+                                        <div class="task-priority high"></div>
+                                        <h4>Finaliser plans Queen Victoria</h4>
+                                        <p>Validation des dimensions avec le client</p>
+                                        <div class="task-meta">
+                                            <span class="task-due-date">02/03/2025</span>
+                                            <span class="task-project">Queen Victoria</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="task-card">
+                                        <div class="task-priority medium"></div>
+                                        <h4>Tests résistance matériaux</h4>
+                                        <p>Vérifier la conformité des nouveaux lots</p>
+                                        <div class="task-meta">
+                                            <span class="task-due-date">04/03/2025</span>
+                                            <span class="task-project">Qualité</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="kanban-column">
+                                <div class="column-header">
+                                    <h3>Terminé</h3>
+                                    <span class="task-count">2</span>
+                                </div>
+                                
+                                <div class="task-list">
+                                    <div class="task-card completed">
+                                        <div class="task-priority high"></div>
+                                        <h4>Réunion équipe production</h4>
+                                        <p>Présentation planning mensuel</p>
+                                        <div class="task-meta">
+                                            <span class="task-due-date">28/02/2025</span>
+                                            <span class="task-project">Management</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="task-card completed">
+                                        <div class="task-priority medium"></div>
+                                        <h4>Rapport mensuel production</h4>
+                                        <p>Synthèse des activités de février</p>
+                                        <div class="task-meta">
+                                            <span class="task-due-date">01/03/2025</span>
+                                            <span class="task-project">Reporting</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="tasks.html" class="widget-footer-link">
+                            <span>Gérer toutes les tâches</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </section>
+                
+                <!-- Team Availability -->
+                <section class="dashboard-widget team-widget">
+                    <div class="widget-header">
+                        <h2>Disponibilité de l'équipe</h2>
+                        <div class="widget-actions">
+                            <button class="widget-action" title="Rafraîchir">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="widget-action" title="Plus d'options">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="widget-content">
+                        <div class="team-availability">
+                            <div class="availability-header">
+                                <div class="availability-date">
+                                    <button class="date-nav prev">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <h3>Semaine du 1 au 7 mars 2025</h3>
+                                    <button class="date-nav next">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="availability-legend">
+                                    <span class="legend-item">
+                                        <span class="legend-color present"></span>
+                                        <span>Présent</span>
+                                    </span>
+                                    <span class="legend-item">
+                                        <span class="legend-color absent"></span>
+                                        <span>Absent</span>
+                                    </span>
+                                    <span class="legend-item">
+                                        <span class="legend-color partial"></span>
+                                        <span>Mi-temps</span>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="availability-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Employé</th>
+                                            <th>Lun</th>
+                                            <th>Mar</th>
+                                            <th>Mer</th>
+                                            <th>Jeu</th>
+                                            <th>Ven</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="employee-name">
+                                                <img src="../images/employee1.jpg" alt="Sophie Dubois">
+                                                <span>Sophie Dubois</span>
+                                            </td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="employee-name">
+                                                <img src="../images/employee2.jpg" alt="Marc Leroy">
+                                                <span>Marc Leroy</span>
+                                            </td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                            <td class="absent">Congé</td>
+                                            <td class="absent">Congé</td>
+                                            <td class="present"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="employee-name">
+                                                <img src="../images/employee3.jpg" alt="Julie Martin">
+                                                <span>Julie Martin</span>
+                                            </td>
+                                            <td class="partial">Formation</td>
+                                            <td class="partial">Formation</td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="employee-name">
+                                                <img src="../images/employee4.jpg" alt="Thomas Bernard">
+                                                <span>Thomas Bernard</span>
+                                            </td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                            <td class="absent">RTT</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="employee-name">
+                                                <img src="../images/employee5.jpg" alt="Émilie Petit">
+                                                <span>Émilie Petit</span>
+                                            </td>
+                                            <td class="absent">Maladie</td>
+                                            <td class="absent">Maladie</td>
+                                            <td class="absent">Maladie</td>
+                                            <td class="present"></td>
+                                            <td class="present"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <a href="team-planning.html" class="widget-footer-link">
+                            <span>Voir le planning complet</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </section>
+                
+                <!-- Inventory Status -->
+                <section class="dashboard-widget inventory-widget">
+                    <div class="widget-header">
+                        <h2>État des stocks</h2>
+                        <div class="widget-actions">
+                            <button class="widget-action" title="Rafraîchir">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="widget-action" title="Plus d'options">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="widget-content">
+                        <div class="inventory-status">
+                            <div class="inventory-chart">
+                                <!-- Chart will be rendered here -->
+                                <canvas id="inventory-chart"></canvas>
+                            </div>
+                            
+                            <div class="inventory-alerts">
+                                <h3>Alertes stock</h3>
+                                <ul class="alert-list">
+                                    <li class="alert-item critical">
+                                        <div class="alert-icon">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </div>
+                                        <div class="alert-content">
+                                            <h4>Toile marine T-450</h4>
+                                            <p>Stock critique (15%)</p>
+                                        </div>
+                                        <button class="alert-action">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </button>
+                                    </li>
+                                    <li class="alert-item warning">
+                                        <div class="alert-icon">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="alert-content">
+                                            <h4>Œillets renforcés M8</h4>
+                                            <p>Stock bas (30%)</p>
+                                        </div>
+                                        <button class="alert-action">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </button>
+                                    </li>
+                                    <li class="alert-item info">
+                                        <div class="alert-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="alert-content">
+                                            <h4>Toile ignifugée T-800</h4>
+                                            <p>Commande en attente</p>
+                                        </div>
+                                        <button class="alert-action">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <a href="inventory.html" class="widget-footer-link">
+                            <span>Gérer l'inventaire</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </section>
+                
+                <!-- Recent Documents -->
+                <section class="dashboard-widget documents-widget">
+                    <div class="widget-header">
+                        <h2>Documents récents</h2>
+                        <div class="widget-actions">
+                            <button class="widget-action" title="Ajouter un document">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="widget-action" title="Plus d'options">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="widget-content">
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <div class="document-icon pdf">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="document-info">
+                                    <h4>Devis_Queen_Victoria_V2.pdf</h4>
+                                    <p>Modifié il y a 2 heures par Thomas Martin</p>
+                                </div>
+                                <div class="document-actions">
+                                    <button class="doc-action" title="Télécharger">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="doc-action" title="Partager">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="document-item">
+                                <div class="document-icon doc">
+                                    <i class="fas fa-file-word"></i>
+                                </div>
+                                <div class="document-info">
+                                    <h4>Cahier_des_charges_Stade_Brestois.docx</h4>
+                                    <p>Modifié hier par Marie Dupont</p>
+                                </div>
+                                <div class="document-actions">
+                                    <button class="doc-action" title="Télécharger">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="doc-action" title="Partager">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="document-item">
+                                <div class="document-icon xls">
+                                    <i class="fas fa-file-excel"></i>
+                                </div>
+                                <div class="document-info">
+                                    <h4>Inventaire_Mars_2025.xlsx</h4>
+                                    <p>Modifié il y a 1 jour par Philippe Legrand</p>
+                                </div>
+                                <div class="document-actions">
+                                    <button class="doc-action" title="Télécharger">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="doc-action" title="Partager">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="document-item">
+                                <div class="document-icon img">
+                                    <i class="fas fa-file-image"></i>
+                                </div>
+                                <div class="document-info">
+                                    <h4>Plan_Hellfest_Structures.jpg</h4>
+                                    <p>Modifié il y a 3 jours par Sophie Dubois</p>
+                                </div>
+                                <div class="document-actions">
+                                    <button class="doc-action" title="Télécharger">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="doc-action" title="Partager">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="documents.html" class="widget-footer-link">
+                            <span>Voir tous les documents</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </section>
+                
+                <!-- Factory Map Preview -->
+                <section class="dashboard-widget map-widget">
+                    <div class="widget-header">
+                        <h2>Plan des locaux</h2>
+                        <div class="widget-actions">
+                            <button class="widget-action" title="Plein écran">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                            <button class="widget-action" title="Plus d'options">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="widget-content">
+                        <div class="factory-map-preview">
+                            <div id="factory-map-container">
+                                <!-- Map will be rendered here -->
+                            </div>
+                            <div class="map-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color production"></span>
+                                    <span>Zone de production</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color storage"></span>
+                                    <span>Stockage</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color office"></span>
+                                    <span>Bureaux</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color loading"></span>
+                                    <span>Zone de chargement</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="factory-map.html" class="widget-footer-link">
+                            <span>Voir le plan interactif complet</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../intranet/js/dashboard.js"></script>
+    <script src="../intranet/js/inventory-chart.js"></script>
+    <script src="../intranet/js/factory-map.js"></script>
+    <script src="../intranet/js/theme.js"></script>
+</body>
+</html>

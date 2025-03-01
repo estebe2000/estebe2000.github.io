@@ -1,0 +1,157 @@
+{
+  "departments": [
+    {
+      "id": 1,
+      "name": "Direction",
+      "description": "Direction générale de l'entreprise",
+      "headId": 8,
+      "location": "Étage 1, Aile A",
+      "color": "#34495e"
+    },
+    {
+      "id": 2,
+      "name": "Marketing",
+      "description": "Département responsable de la stratégie marketing et de la communication",
+      "headId": 5,
+      "location": "Étage 2, Aile B",
+      "color": "#3498db"
+    },
+    {
+      "id": 3,
+      "name": "Ressources Humaines",
+      "description": "Département en charge du recrutement et de la gestion du personnel",
+      "headId": 6,
+      "location": "Étage 3, Aile C",
+      "color": "#e74c3c"
+    },
+    {
+      "id": 4,
+      "name": "Technique",
+      "description": "Département responsable du développement et de la maintenance des solutions techniques",
+      "headId": 7,
+      "location": "Étage 4, Aile D",
+      "color": "#2ecc71"
+    },
+    {
+      "id": 5,
+      "name": "Finance",
+      "description": "Département en charge de la gestion financière et comptable",
+      "headId": 10,
+      "location": "Étage 1, Aile E",
+      "color": "#f39c12"
+    },
+    {
+      "id": 6,
+      "name": "Commercial",
+      "description": "Département responsable des ventes et de la relation client",
+      "headId": null,
+      "location": "Étage 2, Aile F",
+      "color": "#9b59b6"
+    },
+    {
+      "id": 7,
+      "name": "Logistique",
+      "description": "Département en charge de la gestion des stocks et de la logistique",
+      "headId": null,
+      "location": "Étage 1, Aile G",
+      "color": "#1abc9c"
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "name": "Direction Générale",
+      "departmentId": 1,
+      "leaderId": 8,
+      "members": [1, 8]
+    },
+    {
+      "id": 2,
+      "name": "Marketing Digital",
+      "departmentId": 2,
+      "leaderId": 5,
+      "members": [2, 5]
+    },
+    {
+      "id": 3,
+      "name": "Recrutement",
+      "departmentId": 3,
+      "leaderId": 6,
+      "members": [3, 6]
+    },
+    {
+      "id": 4,
+      "name": "Développement",
+      "departmentId": 4,
+      "leaderId": 7,
+      "members": [4, 7]
+    },
+    {
+      "id": 5,
+      "name": "Comptabilité",
+      "departmentId": 5,
+      "leaderId": 10,
+      "members": [9, 10]
+    }
+  ],
+  "hierarchy": {
+    "id": 8,
+    "name": "Paul Dupuis",
+    "title": "Directeur Général",
+    "children": [
+      {
+        "id": 1,
+        "name": "Administrateur Système",
+        "title": "Administrateur Système"
+      },
+      {
+        "id": 5,
+        "name": "Sophie Dubois",
+        "title": "Directrice Marketing",
+        "children": [
+          {
+            "id": 2,
+            "name": "Jean Dupont",
+            "title": "Responsable Marketing"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Michel Bernard",
+        "title": "Directeur RH",
+        "children": [
+          {
+            "id": 3,
+            "name": "Marie Martin",
+            "title": "Chargée de recrutement"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Lucie Robert",
+        "title": "Directrice Technique",
+        "children": [
+          {
+            "id": 4,
+            "name": "Pierre Legrand",
+            "title": "Développeur Senior"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "François Michel",
+        "title": "Directeur Financier",
+        "children": [
+          {
+            "id": 9,
+            "name": "Claire Moreau",
+            "title": "Comptable"
+          }
+        ]
+      }
+    ]
+  }
+}
