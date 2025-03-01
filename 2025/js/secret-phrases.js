@@ -187,7 +187,7 @@ function initSecretPhraseDetection() {
         
         // Check if the input value contains a secret phrase
         for (const phrase of secretPhrases) {
-            if (inputValue.includes(phrase)) {
+            if (inputValue.includes(phrase.toLowerCase())) {
                 console.log(`Secret phrase detected: ${phrase}`);
                 
                 // Toggle the hacker theme

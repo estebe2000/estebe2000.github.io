@@ -46,191 +46,116 @@
             color: var(--primary-color);
         }
         
+        .resource-card h4 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        
         .resource-card p {
             margin-bottom: 1rem;
             text-align: justify;
         }
         
-        .resource-card ul {
-            margin-left: 1.5rem;
+        .resource-links {
+            list-style-type: none;
+            padding-left: 0;
             margin-bottom: 1rem;
         }
         
-        .resource-card li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .quote-container {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .quote-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .quote-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .quote-text {
-            font-style: italic;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            flex-grow: 1;
+        .resource-links li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
             position: relative;
         }
         
-        .quote-text::before {
-            content: '"';
-            font-size: 3rem;
-            color: rgba(0, 0, 0, 0.1);
+        .resource-links li:before {
+            content: '→';
             position: absolute;
-            top: -1rem;
-            left: -1rem;
-        }
-        
-        .quote-text::after {
-            content: '"';
-            font-size: 3rem;
-            color: rgba(0, 0, 0, 0.1);
-            position: absolute;
-            bottom: -2rem;
-            right: -1rem;
-        }
-        
-        .quote-source {
-            text-align: right;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .history-section {
-            margin-bottom: 2rem;
-        }
-        
-        .history-timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 2rem auto;
-        }
-        
-        .history-timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -12px;
-            background-color: white;
-            border: 4px solid var(--primary-color);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .timeline-left {
             left: 0;
-        }
-        
-        .timeline-right {
-            left: 50%;
-        }
-        
-        .timeline-left::after {
-            right: -12px;
-        }
-        
-        .timeline-right::after {
-            left: -12px;
-        }
-        
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .timeline-content h3 {
-            margin-top: 0;
             color: var(--primary-color);
         }
         
-        .timeline-content::after {
+        .resource-links a {
+            color: #2980b9;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .resource-links a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .resources-header {
+            margin-bottom: 2rem;
+        }
+        
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .gallery-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-caption {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .resources-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .bibliography, .sitography {
+            margin-bottom: 3rem;
+        }
+        
+        .bibliography h2, .sitography h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .bibliography h2:after, .sitography h2:after {
             content: '';
-            position: absolute;
-            border-style: solid;
-            border-width: 10px;
-            top: 15px;
-        }
-        
-        .timeline-left .timeline-content::after {
-            border-color: transparent white transparent transparent;
-            right: -20px;
-        }
-        
-        .timeline-right .timeline-content::after {
-            border-color: transparent transparent transparent white;
-            left: -20px;
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto 0;
         }
         
         @media screen and (max-width: 767px) {
-            .history-timeline::after {
-                left: 31px;
+            .resources-container {
+                grid-template-columns: 1fr;
             }
             
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::after {
-                left: 19px;
-                right: auto;
-            }
-            
-            .timeline-left::after, .timeline-right::after {
-                left: 19px;
-            }
-            
-            .timeline-right {
-                left: 0;
-            }
-            
-            .timeline-left .timeline-content::after, .timeline-right .timeline-content::after {
-                border-color: transparent white transparent transparent;
-                left: -20px;
-                right: auto;
+            .gallery-item {
+                min-width: 100%;
             }
         }
     </style>
@@ -252,6 +177,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="ressources.html" class="active">Ressources</a></li>
                         <li><a href="archives.html">Archives</a></li>
+                        <li><a href="histoire.html">Histoire</a></li>
                         <li><a href="crypto.html">Cryptographie</a></li>
                     </ul>
                 </li>
@@ -268,31 +194,35 @@
             </div>
         </section>
 
-        <section class="educational-resources">
-            <h2>Fiches Pédagogiques</h2>
+        <section class="resources-header">
+            <h2>Ressources Pédagogiques</h2>
+            
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="images/ressources/histoire1.png" alt="Document historique 1" class="gallery-image">
+                    <p class="image-caption">Archives historiques du lycée Jean Prévost</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ressources/histoire2.png" alt="Document historique 2" class="gallery-image">
+                    <p class="image-caption">Chronologie des événements importants</p>
+                </div>
+            </div>
+            
+            <p class="resources-intro">Cette page regroupe une sélection de ressources pédagogiques pour approfondir vos connaissances en informatique et sciences du numérique. Pour plus d'informations sur Jean Prévost et son héritage, consultez notre <a href="histoire.html">page Histoire</a>.</p>
+        </section>
+
+        <section class="bibliography">
+            <h2>Bibliographie</h2>
             
             <div class="resources-container">
                 <div class="resource-card">
                     <div class="resource-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-book"></i>
                     </div>
-                    <h3>Cybersécurité</h3>
-                    <p>La cybersécurité est l'ensemble des moyens techniques, organisationnels, juridiques et humains nécessaires à la mise en place de moyens visant à empêcher l'utilisation non autorisée, le mauvais usage, la modification ou le détournement du système d'information.</p>
-                    <h4>Principes fondamentaux</h4>
-                    <ul>
-                        <li><strong>Confidentialité</strong> : Garantir que l'information n'est accessible qu'aux personnes autorisées</li>
-                        <li><strong>Intégrité</strong> : Assurer l'exactitude et la complétude de l'information</li>
-                        <li><strong>Disponibilité</strong> : S'assurer que l'information est accessible quand nécessaire</li>
-                        <li><strong>Authentification</strong> : Vérifier l'identité d'un utilisateur ou d'un système</li>
-                        <li><strong>Non-répudiation</strong> : Empêcher un utilisateur de nier avoir effectué une action</li>
-                    </ul>
-                    <h4>Bonnes pratiques</h4>
-                    <ul>
-                        <li>Utiliser des mots de passe forts et uniques pour chaque service</li>
-                        <li>Activer l'authentification à deux facteurs quand c'est possible</li>
-                        <li>Mettre à jour régulièrement vos logiciels et systèmes d'exploitation</li>
-                        <li>Être vigilant face aux tentatives de phishing</li>
-                        <li>Sauvegarder régulièrement vos données importantes</li>
+                    <h3>Algorithmique</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://www.eyrolles.com/Informatique/Livre/introduction-a-la-science-informatique-9782866311889/" target="_blank">G. Dowek, <em>Introduction à la science informatique</em>, RPA, Scérén, CNDP-CRDP (2011)</a></li>
+                        <li><a href="https://www.dunod.com/sciences-techniques/algorithmique-cours-avec-957-exercices-et-158-problemes/" target="_blank">T. H. Cormen, C. Leiserson, R. Rivest, C. Stein, <em>Algorithmique</em>, 3ème édition, Sciences Sup, Dunod (2010)</a></li>
                     </ul>
                 </div>
                 
@@ -300,172 +230,149 @@
                     <div class="resource-icon">
                         <i class="fas fa-microchip"></i>
                     </div>
-                    <h3>Histoire de l'Informatique</h3>
-                    <p>L'histoire de l'informatique est marquée par des innovations majeures qui ont transformé notre société. Voici quelques moments clés :</p>
-                    <h4>Les pionniers</h4>
-                    <ul>
-                        <li><strong>1837</strong> : Charles Babbage conçoit la machine analytique, considérée comme le premier ordinateur</li>
-                        <li><strong>1843</strong> : Ada Lovelace écrit le premier algorithme destiné à être exécuté par une machine</li>
-                        <li><strong>1936</strong> : Alan Turing présente sa machine de Turing, fondement théorique de l'informatique moderne</li>
-                        <li><strong>1945</strong> : John von Neumann établit l'architecture des ordinateurs modernes</li>
-                    </ul>
-                    <h4>L'ère des ordinateurs</h4>
-                    <ul>
-                        <li><strong>1946</strong> : ENIAC, premier ordinateur électronique général</li>
-                        <li><strong>1947</strong> : Invention du transistor chez Bell Labs</li>
-                        <li><strong>1969</strong> : Création d'ARPANET, l'ancêtre d'Internet</li>
-                        <li><strong>1971</strong> : Premier microprocesseur par Intel</li>
-                        <li><strong>1976</strong> : Fondation d'Apple par Steve Jobs et Steve Wozniak</li>
-                        <li><strong>1981</strong> : IBM lance le PC</li>
-                        <li><strong>1989</strong> : Tim Berners-Lee invente le World Wide Web</li>
-                        <li><strong>1991</strong> : Linus Torvalds crée Linux</li>
+                    <h3>Architecture des ordinateurs</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://www.eyrolles.com/Informatique/Livre/introduction-a-la-science-informatique-9782866311889/" target="_blank">G. Dowek, <em>Introduction à la science informatique</em>, RPA, Scérén, CNDP-CRDP (2011)</a></li>
+                        <li><a href="https://www.eyrolles.com/Informatique/Livre/informatique-et-sciences-du-numerique-specialite-isn-en-terminale-s-avec-des-ex-9782212135435/" target="_blank">G. Dowek et al., <em>Informatique et sciences du numérique, Spécialité ISN en terminale S</em>, Eyrolles (2012)</a></li>
+                        <li><a href="https://www.editions-hermann.fr/livre/from-transistor-to-computer-claude-timsit/" target="_blank">C. Timsit et S. Zertal, <em>From transistor to computer: an introduction to the world of computer architecture</em>, Hermann (2013)</a></li>
                     </ul>
                 </div>
                 
                 <div class="resource-card">
                     <div class="resource-icon">
-                        <i class="fas fa-code"></i>
+                        <i class="fab fa-python"></i>
                     </div>
-                    <h3>Programmation</h3>
-                    <p>La programmation est l'art d'écrire des instructions pour qu'un ordinateur exécute des tâches spécifiques. C'est un mélange de logique, de créativité et de résolution de problèmes.</p>
-                    <h4>Concepts fondamentaux</h4>
-                    <ul>
-                        <li><strong>Variables</strong> : Stockent des données qui peuvent changer pendant l'exécution</li>
-                        <li><strong>Conditions</strong> : Permettent d'exécuter du code selon certaines conditions (if, else)</li>
-                        <li><strong>Boucles</strong> : Répètent des instructions (for, while)</li>
-                        <li><strong>Fonctions</strong> : Regroupent des instructions réutilisables</li>
-                        <li><strong>Structures de données</strong> : Organisent les données (tableaux, objets, listes)</li>
-                        <li><strong>Algorithmes</strong> : Séquences d'instructions pour résoudre un problème</li>
+                    <h3>Programmation Python</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://www.dunod.com/sciences-techniques/programmation-en-python-pour-mathematiques-0/" target="_blank">A. Casamayou-Boucau, P. Chauvin et G. Connan, <em>Programmation en Python pour les mathématiques</em>, 2ème édition, Dunod (2016)</a></li>
+                        <li><a href="https://www.eyrolles.com/Informatique/Livre/informatique-et-sciences-du-numerique-specialite-isn-en-terminale-s-avec-des-ex-9782212135435/" target="_blank">G. Dowek et al., <em>Informatique et sciences du numérique, Spécialité ISN en terminale S</em>, Eyrolles (2012)</a></li>
+                        <li><a href="http://inforef.be/swi/python.htm" target="_blank">G. Swinnen, <em>Apprendre à programmer avec Python 3</em> (en ligne)</a></li>
                     </ul>
-                    <h4>Langages populaires</h4>
-                    <ul>
-                        <li><strong>Python</strong> : Langage polyvalent, facile à apprendre, très utilisé en data science</li>
-                        <li><strong>JavaScript</strong> : Langage principal du web, permet de créer des sites interactifs</li>
-                        <li><strong>Java</strong> : Utilisé pour les applications d'entreprise et Android</li>
-                        <li><strong>C/C++</strong> : Langages performants utilisés pour les systèmes et jeux vidéo</li>
-                        <li><strong>HTML/CSS</strong> : Langages de balisage pour structurer et styliser les pages web</li>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Livres essentiels</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://www.le-passeur-editeur.com/les-livres/essais/les-oubli%C3%A9es-du-num%C3%A9rique/" target="_blank">Les oubliées du numérique, Editeur Le Passeur (2019)</a></li>
+                        <li><a href="https://www.ins2i.cnrs.fr/fr/les-decodeuses-du-numerique/" target="_blank">Les décodeuses du numérique</a></li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section class="quotes">
-            <h2>Citations de Jean Prévost</h2>
+        <section class="sitography">
+            <h2>Sitographie</h2>
             
-            <div class="quote-container">
-                <p>Jean Prévost (1901-1944) était un écrivain, journaliste et résistant français. Ses écrits reflètent son engagement pour la liberté, la justice et la culture. Voici quelques-unes de ses citations marquantes :</p>
-                
-                <div class="quote-grid">
-                    <div class="quote-card">
-                        <div class="quote-text">La culture, c'est ce qui reste quand on a tout oublié.</div>
-                        <div class="quote-source">— Jean Prévost</div>
+            <div class="resources-container">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-server"></i>
                     </div>
-                    
-                    <div class="quote-card">
-                        <div class="quote-text">L'intelligence n'est pas de savoir beaucoup, mais de savoir ce qu'on sait et ce qu'on ne sait pas.</div>
-                        <div class="quote-source">— Jean Prévost</div>
-                    </div>
-                    
-                    <div class="quote-card">
-                        <div class="quote-text">La liberté n'est pas un luxe que l'on puisse se permettre de marchander.</div>
-                        <div class="quote-source">— Jean Prévost</div>
-                    </div>
-                    
-                    <div class="quote-card">
-                        <div class="quote-text">Le courage, c'est de comprendre sa propre vie... Le courage, c'est d'aimer la vie et de regarder la mort d'un regard tranquille.</div>
-                        <div class="quote-source">— Jean Prévost</div>
-                    </div>
-                    
-                    <div class="quote-card">
-                        <div class="quote-text">La véritable éducation consiste à tirer le meilleur de soi-même.</div>
-                        <div class="quote-source">— Jean Prévost</div>
-                    </div>
-                    
-                    <div class="quote-card">
-                        <div class="quote-text">L'homme qui ne lit pas n'a aucun avantage sur celui qui ne sait pas lire.</div>
-                        <div class="quote-source">— Jean Prévost</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="history-section">
-            <h2>Jean Prévost et la Résistance</h2>
-            
-            <div class="history-timeline">
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-content">
-                        <h3>1901-1926 : Jeunesse et Formation</h3>
-                        <p>Né le 13 juin 1901 à Saint-Pierre-lès-Nemours, Jean Prévost fait des études brillantes. Normalien, agrégé de lettres, il commence sa carrière d'écrivain et de journaliste dès les années 1920.</p>
-                    </div>
+                    <h3>Architecture des ordinateurs</h3>
+                    <h4>Instructions en ligne de commande</h4>
+                    <ul class="resource-links">
+                        <li><a href="http://luffah.xyz/bidules/Terminus/" target="_blank">Jeu Terminus</a></li>
+                        <li><a href="https://bellard.org/jslinux/" target="_blank">Machine virtuelle Linux</a></li>
+                    </ul>
+                    <h4>Simulation de portes logiques</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://logic.modulo-info.ch/" target="_blank">Logic</a></li>
+                        <li><a href="http://www.cburch.com/logisim/index.html" target="_blank">Logisim</a></li>
+                    </ul>
                 </div>
                 
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-content">
-                        <h3>1926-1939 : Carrière Littéraire</h3>
-                        <p>Il publie plusieurs romans et essais, dont "Dix-huitième année" (1929) et "Les Frères Bouquinquant" (1930). Il collabore à de nombreuses revues littéraires et devient un intellectuel reconnu de l'entre-deux-guerres.</p>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-globe"></i>
                     </div>
+                    <h3>Développement Web</h3>
+                    <h4>Cours</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://openclassrooms.com/fr/courses/1603881-creez-votre-site-web-avec-html5-et-css3/" target="_blank">OpenClassrooms (HTML5 et CSS3)</a></li>
+                        <li><a href="https://openclassrooms.com/fr/courses/6175841-apprenez-a-programmer-avec-javascript/" target="_blank">OpenClassrooms (JavaScript)</a></li>
+                        <li><a href="https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/" target="_blank">OpenClassrooms (PHP)</a></li>
+                        <li><a href="https://w3schools.com/" target="_blank">w3schools</a></li>
+                    </ul>
+                    <h4>Sites officiels</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://developer.mozilla.org/fr/" target="_blank">Développeurs de Mozilla</a></li>
+                        <li><a href="https://www.javascript.com/" target="_blank">JavaScript</a></li>
+                        <li><a href="http://www.php.net/" target="_blank">PHP</a></li>
+                        <li><a href="https://www.w3.org/" target="_blank">W3C</a></li>
+                    </ul>
+                    <h4>Validateurs</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://jigsaw.w3.org/css-validator/#validate_by_upload" target="_blank">CSS</a></li>
+                        <li><a href="https://validator.w3.org/#validate_by_upload+with_options" target="_blank">HTML</a></li>
+                    </ul>
                 </div>
                 
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-content">
-                        <h3>1940 : Début de l'Occupation</h3>
-                        <p>Après la défaite française et l'armistice du 22 juin 1940, Jean Prévost refuse la collaboration avec l'occupant nazi. Il quitte Paris pour s'installer à Grenoble, en zone libre.</p>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fab fa-python"></i>
                     </div>
+                    <h3>Programmation Python</h3>
+                    <h4>Environnement de Développement Intégré (EDI)</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://www.anaconda.com/download/" target="_blank">Anaconda (multiplateforme)</a></li>
+                        <li><a href="https://console.basthon.fr/" target="_blank">Basthon (en ligne)</a></li>
+                        <li><a href="https://www.edupyter.net/" target="_blank">EduPyter (windows)</a></li>
+                        <li><a href="https://edupython.tuxfamily.org/" target="_blank">EduPython (windows)</a></li>
+                        <li><a href="https://www.python.org/downloads/" target="_blank">IDLE (multiplateforme)</a></li>
+                        <li><a href="https://www.spyder-ide.org/" target="_blank">Spider (multiplateforme)</a></li>
+                    </ul>
+                    <h4>Gestion des notebooks</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://notebook.basthon.fr/" target="_blank">Basthon</a></li>
+                        <li><a href="https://capytale2.ac-paris.fr/web/c-auth/list/" target="_blank">Capytale</a></li>
+                    </ul>
+                    <h4>Sites officiels</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://openclassrooms.com/courses/apprenez-a-programmer-en-python/" target="_blank">OpenClassrooms</a></li>
+                        <li><a href="https://www.pygame.org/news/" target="_blank">Pygame</a></li>
+                        <li><a href="https://www.python.org/doc/" target="_blank">Python</a></li>
+                        <li><a href="https://w3schools.com/" target="_blank">w3schools</a></li>
+                    </ul>
                 </div>
                 
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-content">
-                        <h3>1942 : Entrée dans la Résistance</h3>
-                        <p>Après l'invasion de la zone libre par les Allemands en novembre 1942, Jean Prévost entre activement dans la Résistance. Il adopte le pseudonyme de "Capitaine Goderville" et participe à la création de maquis dans le Vercors.</p>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-network-wired"></i>
                     </div>
+                    <h3>Réseaux</h3>
+                    <h4>Simulation de réseaux</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://www.lernsoftware-filius.de/Herunterladen/" target="_blank">Filius (site en allemand, mais possibilité de mettre le logiciel en français)</a></li>
+                    </ul>
                 </div>
                 
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-content">
-                        <h3>1943 : Actions dans le Vercors</h3>
-                        <p>Il participe à l'organisation du maquis du Vercors, vaste plateau montagneux qui devient un haut lieu de la Résistance. Il forme des jeunes résistants et participe à des opérations de sabotage contre l'occupant.</p>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
+                    <h3>Sites de cours de première</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://www.france-ioi.org/" target="_blank">France IOI : contenus gratuits pour découvrir la programmation, progresser en algorithmique et développer le goût d'apprendre et de réfléchir</a></li>
+                        <li><a href="https://blog.adatechschool.fr/jeux-apprendre-a-coder/" target="_blank">Jeux pour apprendre à programmer</a></li>
+                        <li><a href="https://py-rates.org/" target="_blank">Jeu pour découvrir les bases du langage Python</a></li>
+                        <li><a href="https://pixees.fr/informatiquelycee/" target="_blank">Site de David Roche</a></li>
+                        <li><a href="https://glassus.github.io/premiere_nsi/" target="_blank">Site de Gilles Lassus</a></li>
+                    </ul>
                 </div>
                 
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-content">
-                        <h3>Juin 1944 : République du Vercors</h3>
-                        <p>Après le débarquement allié du 6 juin 1944, le Vercors se proclame "République libre". Jean Prévost participe activement à cette organisation qui défie ouvertement l'occupant nazi.</p>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
+                    <h3>Sites sur les sciences du numérique</h3>
+                    <ul class="resource-links">
+                        <li><a href="https://interstices.info/" target="_blank">Algorithmes, logiciels, modèles, données... entrez dans les interstices</a></li>
+                        <li><a href="https://www.inria.fr/fr/" target="_blank">INRIA</a></li>
+                    </ul>
                 </div>
-                
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-content">
-                        <h3>Juillet 1944 : Assaut Allemand</h3>
-                        <p>Le 21 juillet 1944, les Allemands lancent une offensive massive contre le maquis du Vercors. Malgré une résistance héroïque, les maquisards sont submergés par des forces très supérieures en nombre et en armement.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-content">
-                        <h3>1er Août 1944 : Mort au Combat</h3>
-                        <p>Jean Prévost trouve la mort le 1er août 1944 lors d'une embuscade à Sassenage, près de Grenoble, alors qu'il tentait de rejoindre d'autres groupes de résistants après la défaite du Vercors. Il avait 43 ans.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-content">
-                        <h3>Après 1945 : Hommages</h3>
-                        <p>Après la guerre, Jean Prévost est reconnu comme un héros de la Résistance. De nombreux établissements scolaires, dont le lycée de Montivilliers, portent son nom en hommage à son courage et à son engagement pour la liberté.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="resource-card">
-                <h3>L'Héritage de Jean Prévost</h3>
-                <p>L'engagement de Jean Prévost dans la Résistance illustre parfaitement la convergence entre l'intellectuel et l'homme d'action. Écrivain reconnu, il n'a pas hésité à risquer sa vie pour défendre les valeurs de liberté et de dignité humaine face à l'oppression nazie.</p>
-                <p>Son parcours nous rappelle que la résistance à l'oppression peut prendre de nombreuses formes, de l'écriture à l'action armée, et que les intellectuels ont un rôle crucial à jouer dans la défense des valeurs démocratiques.</p>
-                <p>En portant son nom, notre lycée s'engage à perpétuer les valeurs qu'il a défendues : l'amour de la culture et du savoir, l'engagement citoyen, et le courage face à l'adversité.</p>
-                <blockquote>
-                    "Nous ne voulons plus d'une France qui démissionne, d'une France qui s'abandonne. Nous voulons une France libre dans un monde libre."
-                    <cite>— Extrait d'un texte attribué à Jean Prévost, 1943</cite>
-                </blockquote>
             </div>
         </section>
     </main>
@@ -511,6 +418,9 @@
                     </li>
                     <li class="mobile-submenu-item">
                         <a href="archives.html" class="mobile-submenu-link">Archives</a>
+                    </li>
+                    <li class="mobile-submenu-item">
+                        <a href="histoire.html" class="mobile-submenu-link">Histoire</a>
                     </li>
                     <li class="mobile-submenu-item">
                         <a href="crypto.html" class="mobile-submenu-link">Cryptographie</a>
