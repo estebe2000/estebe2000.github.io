@@ -249,8 +249,9 @@
                 </ul>
             </li>
             <li><a href="#profil-utilisateur">7. Système de profil utilisateur</a></li>
-            <li><a href="#deploiement">8. Déploiement</a></li>
-            <li><a href="#conseils">9. Conseils et bonnes pratiques</a></li>
+            <li><a href="#responsive-design">8. Compatibilité Mobile et PC</a></li>
+            <li><a href="#deploiement">9. Déploiement</a></li>
+            <li><a href="#conseils">10. Conseils et bonnes pratiques</a></li>
         </ul>
     </div>
     
@@ -620,24 +621,67 @@
         
         <section id="activation-hacker">
             <h3>5.1 Activation du mode Hacker</h3>
-            <p>Le mode Hacker est une fonctionnalité cachée qui ajoute une couche supplémentaire d'énigmes et de défis pour les utilisateurs plus avancés. Il peut être activé de plusieurs façons :</p>
+            <p>Le mode Hacker est une fonctionnalité cachée qui ajoute une couche supplémentaire d'énigmes et de défis pour les utilisateurs plus avancés. Voici les méthodes précises d'activation :</p>
             
-            <ul>
-                <li>En saisissant un code secret dans la console JavaScript</li>
-                <li>En cliquant sur une séquence spécifique d'éléments sur la page</li>
-                <li>En découvrant et en suivant des indices cachés dans le code source</li>
-            </ul>
+            <h4>Méthode 1 : Via la console JavaScript</h4>
+            <ol>
+                <li>L'utilisateur doit ouvrir la console JavaScript (F12 ou Ctrl+Shift+J sur la plupart des navigateurs)</li>
+                <li>Saisir la commande <code>activateHackerMode()</code> ou <code>window.hackerMode = true</code></li>
+                <li>Le mode hacker s'active immédiatement avec des effets visuels et sonores</li>
+            </ol>
             
-            <p>Par défaut, le code pour activer le mode Hacker est défini dans <code>js/hacker-theme.js</code> :</p>
+            <h4>Méthode 2 : Séquence de clics spécifique</h4>
+            <ol>
+                <li>L'utilisateur doit cliquer sur une séquence précise d'éléments dans l'ordre suivant :</li>
+                <li>Logo de l'établissement (en haut à gauche)</li>
+                <li>Titre principal de la page</li>
+                <li>Pied de page (deux fois)</li>
+                <li>Cette séquence déclenche l'activation du mode hacker</li>
+            </ol>
+            
+            <h4>Méthode 3 : Code secret dans l'URL</h4>
+            <ol>
+                <li>Ajouter le paramètre <code>?hack=true</code> à la fin de l'URL de n'importe quelle page</li>
+                <li>Par exemple : <code>https://votre-site.com/index.html?hack=true</code></li>
+            </ol>
+            
+            <h4>Méthode 4 : Découverte d'indices cachés</h4>
+            <ol>
+                <li>Des indices sont dissimulés dans le code source des pages</li>
+                <li>En inspectant le code HTML, l'utilisateur peut trouver des commentaires avec des instructions</li>
+                <li>Ces indices mènent à une séquence de touches à presser (par défaut : "h", "a", "c", "k")</li>
+            </ol>
+            
+            <p>Le code d'activation est défini dans <code>js/hacker-theme.js</code> et peut être personnalisé :</p>
             <pre><code>// Activation par la console
 function activateHackerMode() {
-    // Code d'activation
+    // Active le mode hacker
+    document.body.classList.add('hacker-mode');
+    localStorage.setItem('hackerMode', 'true');
+    playHackerSound('activate');
+    showHackerMessage('Accès autorisé. Mode hacker activé.');
+    initMatrixRain();
 }
 
 // Activation par séquence de clics
 const secretSequence = ['logo', 'title', 'footer', 'footer'];
+let currentSequence = [];
+
+// Activation par séquence de touches
+const keySequence = ['h', 'a', 'c', 'k'];
+let keyPressed = [];
+
+// Vérification du paramètre URL
+function checkUrlParam() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('hack') === 'true') {
+        activateHackerMode();
+    }
+}
 </code></pre>
-            <p>Vous pouvez personnaliser ces méthodes d'activation selon vos préférences.</p>
+            <div class="important">
+                <strong>Important :</strong> Vous pouvez personnaliser ces méthodes d'activation selon vos préférences en modifiant le fichier <code>js/hacker-theme.js</code>. Assurez-vous de mettre à jour les indices cachés dans le code HTML si vous changez les séquences d'activation.
+            </div>
         </section>
         
         <section id="personnalisation-hacker">
@@ -799,8 +843,41 @@ const secretSequence = ['logo', 'title', 'footer', 'footer'];
         </div>
     </section>
     
+    <section id="responsive-design">
+        <h2>8. Compatibilité Mobile et PC</h2>
+        <p>Le template est entièrement responsive et s'adapte automatiquement à tous les types d'appareils, des smartphones aux ordinateurs de bureau.</p>
+        
+        <h4>Fonctionnalités responsive</h4>
+        <ul>
+            <li><strong>Navigation adaptative</strong> : Menu hamburger sur mobile, navigation complète sur desktop</li>
+            <li><strong>Mise en page fluide</strong> : Utilisation de grilles CSS et de media queries pour adapter le contenu</li>
+            <li><strong>Images responsives</strong> : Optimisation des images pour différentes tailles d'écran</li>
+            <li><strong>Contrôles tactiles</strong> : Support des interactions tactiles pour les appareils mobiles</li>
+            <li><strong>Orientation</strong> : Adaptation à l'orientation portrait et paysage sur mobile</li>
+        </ul>
+        
+        <h4>Éléments spécifiques aux mobiles</h4>
+        <ul>
+            <li><strong>Menu overlay</strong> : Navigation plein écran sur mobile pour une meilleure expérience tactile</li>
+            <li><strong>Taille des boutons</strong> : Éléments interactifs dimensionnés pour être facilement utilisables au doigt</li>
+            <li><strong>Simplification</strong> : Certains éléments complexes sont simplifiés sur mobile pour une meilleure lisibilité</li>
+        </ul>
+        
+        <h4>Test de compatibilité</h4>
+        <p>Le template a été testé sur les configurations suivantes :</p>
+        <ul>
+            <li><strong>Navigateurs desktop</strong> : Chrome, Firefox, Safari, Edge</li>
+            <li><strong>Navigateurs mobiles</strong> : Chrome pour Android, Safari pour iOS</li>
+            <li><strong>Tailles d'écran</strong> : De 320px (petit mobile) à 1920px (grand écran)</li>
+        </ul>
+        
+        <div class="note">
+            <strong>Note :</strong> Bien que le template soit optimisé pour tous les appareils, certaines fonctionnalités avancées comme les visites virtuelles 360° peuvent nécessiter plus de ressources sur les appareils mobiles. Assurez-vous de tester ces fonctionnalités sur différents appareils.
+        </div>
+    </section>
+    
     <section id="deploiement">
-        <h2>8. Déploiement</h2>
+        <h2>9. Déploiement</h2>
         <p>Le template peut être déployé sur n'importe quel serveur web statique. Voici les étapes générales pour déployer votre chasse au trésor personnalisée :</p>
         
         <h4>Préparation</h4>
@@ -831,7 +908,7 @@ const secretSequence = ['logo', 'title', 'footer', 'footer'];
     </section>
     
     <section id="conseils">
-        <h2>9. Conseils et bonnes pratiques</h2>
+        <h2>10. Conseils et bonnes pratiques</h2>
         
         <h4>Conception</h4>
         <ul>
