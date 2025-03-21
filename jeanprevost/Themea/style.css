@@ -201,6 +201,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 }
 
 #sceneListToggle {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -254,6 +255,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 }
 
 #sceneList {
+  display: none;
   position: absolute;
   top: 0;
   left: -220px;
