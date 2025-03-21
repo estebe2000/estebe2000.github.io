@@ -1,0 +1,26 @@
+/* Réinitialisation des marges et paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  padding: 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+  flex-shrink: 0; /* Empêche le titre d'être écrasé */
+}
+
+iframe {
+  width: 100%; 
+  flex: 1; /* Prend tout l'espace restant après le h1 */
+  border: none;
+}
