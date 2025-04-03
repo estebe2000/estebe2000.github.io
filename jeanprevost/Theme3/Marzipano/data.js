@@ -175,7 +175,7 @@ var APP_DATA = {
         {
           "yaw": 0.4969566468719613,
           "pitch": 0.10636944313856844,
-          "title": "<font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">Bibliothèque</font></font>",
+          "title": "<font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">Indice ICI</font></font>",
           "text": "<font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">Salle BTS.</font></font>"
         }
       ]
