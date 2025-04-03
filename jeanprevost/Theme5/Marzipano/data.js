@@ -85,7 +85,7 @@ var APP_DATA = {
         {
           "yaw": 1.1421074258691224,
           "pitch": 0.05051716142594742,
-          "title": "Machine à boissons",
+          "title": "Indice ICI",
           "text": "Machine mise en place après une révolution digne de 1789 pour la modeste somme de 60 centimes, vous avez un café de qualité \"convenable\"."
         },
         {
