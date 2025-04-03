@@ -299,7 +299,7 @@ var APP_DATA = {
         {
           "yaw": 2.717320082706956,
           "pitch": -0.18248022290126187,
-          "title": "gymnase Jean Prévost",
+          "title": "Indice ICI",
           "text": "..."
         },
         {
