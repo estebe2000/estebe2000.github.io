@@ -129,7 +129,7 @@ var APP_DATA = {
         {
           "yaw": 1.014185198702119,
           "pitch": 0.04578466041428797,
-          "title": "La Vie Scolaire",
+          "title": "Indice ICI",
           "text": "Fenêtre de la vie scolaire"
         }
       ]
