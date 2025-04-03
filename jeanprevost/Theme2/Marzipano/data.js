@@ -252,7 +252,7 @@ var APP_DATA = {
         {
           "yaw": -0.03183115262497793,
           "pitch": 0.45911401104666183,
-          "title": "Salle de Cinéma",
+          "title": "Indice ICI",
           "text": "C'est ici que les idées des jeunes cinéphiles prennent vie"
         }
       ]
