@@ -33,7 +33,7 @@ var APP_DATA = {
           "yaw": 0.024672811754555823,
           "pitch": 0.14043863945766333,
           "title": "LA CAVALERIE EST LA !!",
-          "text": ""
+          "text": "Indice ICI"
         },
         {
           "yaw": -1.6408098454858706,
